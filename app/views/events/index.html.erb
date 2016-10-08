@@ -6,7 +6,7 @@
   </button>
   <ul id="sidebar_container" class="dropdown-menu">
     <% @event_categories.each do |event| %>
-    <li><%= link_to event, "/events/category/#{URI.encode(event)}" %></li>
+    <li><%= link_to event, "/events/category/#{event}" %></li>
     <% end %>
     <li role="separator" class="divider"></li>
     <li><%= link_to "ทั้งหมด", events_path %></li>
