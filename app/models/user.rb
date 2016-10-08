@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
+  belongs_to :location
+
   validates :uid, uniqueness: { scope: :provider }
 
   # Find or create resource with auth hash returned from omniauth provider.
