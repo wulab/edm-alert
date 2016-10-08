@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   }
 
   resources :events, only: :index
+  get 'pages/about'
   get '/events/category/:category', to: 'events#category'
   mount Sidekiq::Web => '/sidekiq'
 end
