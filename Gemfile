@@ -54,6 +54,9 @@ gem 'kaminari'
 # Font-Awesome Sass gem for use in Ruby/Rails projects
 gem 'font-awesome-sass', '~> 4.6.2'
 
+# Simple, efficient background processing for Ruby
+gem 'sidekiq', github: 'mperham/sidekiq'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
