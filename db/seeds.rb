@@ -31,3 +31,18 @@ unless Location.any?
     end
   end
 end
+
+unless Event.any?
+  say_with_time "seed(\"events\")" do
+    Event.create(location: Location.find_by(postal_code: '10400'),
+          title: 'แผ่นดินไหวที่ อ.สะเมิง จ.เชียงใหม่',
+          description: '',
+          category: 'แผ่นดินไหว',
+          source_name: 'Thai Meteorological Department:2558',
+          source_url: 'http://data.tmd.go.th/',
+          source_data: '',
+          longitude: 98.7000000,
+          latitude: 18.9400000,
+          start_at: Time.now)
+  end
+end

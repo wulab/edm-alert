@@ -1,0 +1,36 @@
+<h1>ข้อมูลเตือนภัย</h1>
+
+<br />
+<div class="dropdown category-select pull-left">
+  <button type="button" class="btn btn-default btn-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    ประเภท <span class="caret"></span>
+  </button>
+  <ul id="sidebar_container" class="dropdown-menu">
+    <% @event_categories.each do |event| %>
+    <li><%= link_to event, "/events/category/#{URI.encode(event)}" %></li>
+    <% end %>
+    <li role="separator" class="divider"></li>
+    <li><%= link_to "ทั้งหมด", events_path %></li>
+  </ul>
+</div>
+<br /><br />
+<hr/>
+<!-- Event.pluck(:category).uniq -->
+<div class="table-responsive">
+  <table class="table table-condensed table-striped table-hover">
+    <thead>
+      <tr>
+        <th>ชื่อเหตุการณ์</th>
+        <th>ประเภท</th>
+        <th>ละติจูด</th>
+        <th>ลองติจูด</th>
+        <th>แหล่งข้อมูลe</th>
+        <th>ตำแหน่ง</th>
+        <th>วัน-เวลา</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render :partial => "event", :collection => @events %>
+    </tbody>
+  </table
+</div>

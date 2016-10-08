@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'user/omniauth_callbacks'
   }
 
+  resources :events, only: :index
+  get '/events/category/:category', to: 'events#category'
   mount Sidekiq::Web => '/sidekiq'
 end

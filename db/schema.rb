@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20161008103707) do
     t.text     "source_data"
     t.float    "longitude"
     t.float    "latitude"
+    t.datetime "start_at"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["location_id"], name: "index_events_on_location_id", using: :btree
