@@ -33,4 +33,9 @@ class User < ApplicationRecord
   def omniauth?
     provider? && uid?
   end
+
+  def location=(postal_code)
+    location = Location.find_by(postal_code: postal_code)
+    super(location)
+  end
 end

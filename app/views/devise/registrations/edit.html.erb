@@ -1,10 +1,12 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>แก้ไข <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :full_name, required: true, label: 'ชื่อ-นามสกุล', autofocus: true  %>
+    <%= f.input :email, label: 'อีเมล์', required: true%>
+    <%= f.input :location, required: true, label: 'รหัสไปรษณีย์' %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
