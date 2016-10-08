@@ -1,5 +1,5 @@
 <tr>
-  <td><%= event.title %></td>
+  <td><%= link_to event.title, "https://www.google.co.th/maps/@#{event.latitude},#{event.longitude},15z" %></td>
   <td><%= event.category %></td>
   <td><%= event.latitude %></td>
   <td><%= event.longitude %></td>
