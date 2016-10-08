@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'please-change-me-at-config-initializers-devise@example.com'
   layout 'mailer'
 end
