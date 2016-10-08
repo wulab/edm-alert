@@ -1,2 +1,23 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <div class="scroll-pane">
+        <div class="card first">
+          <div class="card-block">
+            <h1 class="h1 card-title">EDM Alert</h4>
+            <% if not user_signed_in? %>
+              <p class="p lead">EDM Alert ใช้ข้อมูลระบบเรียลไทม์ จากหน่วยงานรัฐบาล แจ้งเตือนคุณให้เตรียมพร้อมรับมือ และปลอดภัยจากภัยพิบัติ</p>
+            <% end %>
+          </div>
+          <div class="card-block">
+            <% if user_signed_in? %>
+                <p class="p">สวัสดี คุณ, <%= current_user.username %></p>
+            <% else %>
+              <%= link_to "สมัคร", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+              <%= link_to "เข้าสู่ระบบ", new_user_session_path, class: "btn btn-lg btn-default" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
