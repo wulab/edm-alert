@@ -5,3 +5,29 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+def say(message, subitem = false)
+  puts "#{subitem ? '   ->' : '--'} #{message}"
+end
+
+def say_with_time(message)
+  say message
+  result = nil
+  time = Benchmark.measure { result = yield }
+  say "%.4fs" % time.real, :subitem
+  result
+end
+
+unless Location.any?
+  say_with_time "seed(\"locations\")" do
+    addresses = JSON.load Rails.root.join("db/addresses.json")
+    addresses.each do |address|
+      Location.create!(
+        district:    address['district'],
+        latitude:    address['lat'],
+        longitude:   address['lng'],
+        postal_code: address['zip'],
+        province:    address['province']
+      )
+    end
+  end
+end
