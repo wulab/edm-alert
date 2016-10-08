@@ -7,6 +7,7 @@ module Clockwork
     job.constantize.perform_later
   end
 
+  every(1.day, 'EarthquakeDataCollectionJob')
   every(1.day, 'FloodDataCollectionJob')
 
   # note: callbacks that return nil or false will cause event to not run
