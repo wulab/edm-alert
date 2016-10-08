@@ -4,10 +4,10 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.references :location, foreign_key: true
       t.string :title
       t.string :description
-      t.string :category
+      t.integer :category, default: 0
       t.string :source_name
       t.string :source_url
-      t.text :source_data
+      t.json :source_data
       t.float :longitude
       t.float :latitude
       t.datetime :start_at

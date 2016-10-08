@@ -33,25 +33,27 @@ class FloodDataCollectionJob < ApplicationJob
     logger.debug "Response"
     logger.debug "status=#{response.code} body=#{response.body[0,200]}"
 
-    document = Hash.from_xml(response.body)
-    metadata = document['DailySeismicEvents']['header']
-    data     = document['DailySeismicEvents']['DailyEarthquakes']
+    document    = Hash.from_xml(response.body)
+    metadata    = document['DailySeismicEvents']['header']
+    earthquakes = document['DailySeismicEvents']['DailyEarthquakes']
 
-    data.each do |datum|
-      unless m = /อ\.(\S+) จ\.(\S+)/.match(datum['OriginThai'])
-        logger.debug "! Skipped #{datum['TitleThai']}"
-        logger.debug "  OriginThai=#{datum['OriginThai']}"
+    earthquakes.each do |earthquake|
+      unless m = /อ\.(\S+) จ\.(\S+)/.match(earthquake['OriginThai'])
+        logger.debug "! Skipped #{earthquake['TitleThai']}"
         next
       end
 
-      event = Event.create(
-        category:    'แผ่นดินไหว',
-        latitude:    datum['Latitude'],
+      event = Event.create_with(
+        category:    'earthquake',
         location:    Location.find_by(district: m[1], province: m[2]),
-        longitude:   datum['Longitude'],
         source_name: metadata['copyRight'],
         source_url:  metadata['uri'],
-        title:       datum['TitleThai']
+        title:       earthquake['TitleThai'],
+        source_data: earthquake
+      ).find_or_create_by(
+        latitude:  earthquake['Latitude'],
+        longitude: earthquake['Longitude'],
+        start_at:  earthquake['DateTimeUTC']
       )
 
       if event.invalid?

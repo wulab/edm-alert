@@ -19,7 +19,7 @@ end
 
 unless Location.any?
   say_with_time "seed(\"locations\")" do
-    addresses = JSON.load Rails.root.join("db/addresses.json")
+    addresses = JSON.load Rails.root.join("db/postal_codes.json")
     addresses.each do |address|
       Location.create!(
         district:    address['district'],
@@ -34,15 +34,25 @@ end
 
 unless Event.any?
   say_with_time "seed(\"events\")" do
-    Event.create(location: Location.find_by(postal_code: '10400'),
-          title: 'แผ่นดินไหวที่ อ.สะเมิง จ.เชียงใหม่',
-          description: '',
-          category: 'แผ่นดินไหว',
-          source_name: 'Thai Meteorological Department:2558',
-          source_url: 'http://data.tmd.go.th/',
-          source_data: '',
-          longitude: 98.7000000,
-          latitude: 18.9400000,
-          start_at: Time.now)
+    Event.create([
+      {
+        category:    'earthquake',
+        latitude:    18.9400000,
+        location:    Location.find_by(postal_code: '50250'),
+        longitude:   98.7000000,
+        source_name: 'Thai Meteorological Department:2558',
+        source_url:  'http://data.tmd.go.th/api/DailySeismicEvent/v1/?uid=api&ukey=api12345',
+        start_at:    '2016-10-07 20:34:37.000',
+        title:       'แผ่นดินไหวที่ อ.สะเมิง จ.เชียงใหม่'
+      },
+      {
+        category:    'flood',
+        location:    Location.find_by(postal_code: '10260'),
+        source_name: 'Department of Drainage and Sewerage',
+        source_url:  'http://203.155.220.119/DDS_Flooding/',
+        start_at:    ActiveSupport::TimeZone['Bangkok'].parse('2016-10-08 17:25:00.000'),
+        title:       'น้ำท่วมบริเวณ หน้าสถานีรถไฟแบริ่ง'
+      }
+    ])
   end
 end
