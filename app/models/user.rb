@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   belongs_to :location
 
-  validates :uid, uniqueness: { scope: :provider }
+  validates :uid, uniqueness: { scope: :provider }, allow_nil: true
 
   # Find or create resource with auth hash returned from omniauth provider.
   def self.find_or_create_with_omniauth(auth)
@@ -34,10 +34,11 @@ class User < ApplicationRecord
     provider? && uid?
   end
 
-  def location=(value)
-    if value.is_a?(String)
-      value = Location.find_by(postal_code: value)
-    end
-    super(value)
+  def postal_code
+    location.try(:postal_code)
+  end
+
+  def postal_code=(value)
+    self.location = Location.find_by(postal_code: value)
   end
 end
