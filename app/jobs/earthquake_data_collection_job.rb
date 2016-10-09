@@ -34,9 +34,7 @@ class EarthquakeDataCollectionJob < ApplicationJob
     logger.debug "status=#{response.code} body=#{response.body[0,200]}"
 
     document    = Hash.from_xml(response.body)
-    metadata    = document['DailySeismicEvents']['header']
     earthquakes = document['DailySeismicEvents']['DailyEarthquakes']
-
     earthquakes.each do |earthquake|
       m = /อ\.(\S+) จ\.(\S+)/.match(earthquake['OriginThai'])
 
@@ -58,7 +56,7 @@ class EarthquakeDataCollectionJob < ApplicationJob
         location:    location,
         longitude:   earthquake['Longitude'],
         source_name: 'กรมอุตุนิยมวิทยา',
-        source_url:  metadata['uri'],
+        source_url:  uri.to_s,
         source_data: {
           content: earthquake,
           content_type: 'json'

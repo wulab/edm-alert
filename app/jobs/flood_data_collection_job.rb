@@ -28,7 +28,7 @@ class FloodDataCollectionJob < ApplicationJob
         source_name: 'สำนักการระบายน้ำ',
         source_url:  'http://203.155.220.119/DDS_Flooding/',
         source_data: {
-          content: row.to_html,
+          content:      row.to_html,
           content_type: 'html'
         }
       ).find_or_create_by(
