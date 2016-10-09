@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  categories:
+    earthquake: 'แผ่นดินไหว'
+    flood: 'น้ำท่วม'
+  locations:
+    province: 'จังหวัด'
