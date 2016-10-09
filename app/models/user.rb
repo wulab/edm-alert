@@ -34,8 +34,10 @@ class User < ApplicationRecord
     provider? && uid?
   end
 
-  def location=(postal_code)
-    location = Location.find_by(postal_code: postal_code)
-    super(location)
+  def location=(value)
+    if value.is_a?(String)
+      value = Location.find_by(postal_code: value)
+    end
+    super(value)
   end
 end

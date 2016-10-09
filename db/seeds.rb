@@ -32,9 +32,20 @@ unless Location.any?
   end
 end
 
+unless User.any?
+  say_with_time "seed(\"users\")" do
+    User.create!(
+      email:     'please-change-me-at-config-initializers-devise@example.com',
+      location:  Location.find_by(postal_code: '10100'),
+      full_name: 'Default User',
+      password:  'passw0rd'
+    )
+  end
+end
+
 unless Event.any?
   say_with_time "seed(\"events\")" do
-    Event.create([
+    Event.create!([
       {
         category:    'earthquake',
         latitude:    18.9400000,

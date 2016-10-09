@@ -8,6 +8,6 @@ class NotificationMailer < ApplicationMailer
   def event_warning(user, event)
     @user  = user
     @event = event
-    mail to: @user.email, subject: event.title
+    mail to: @user.email, subject: @event.title
   end
 end
