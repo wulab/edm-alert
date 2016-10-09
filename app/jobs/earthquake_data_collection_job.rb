@@ -38,22 +38,34 @@ class EarthquakeDataCollectionJob < ApplicationJob
     earthquakes = document['DailySeismicEvents']['DailyEarthquakes']
 
     earthquakes.each do |earthquake|
-      unless m = /อ\.(\S+) จ\.(\S+)/.match(earthquake['OriginThai'])
+      m = /อ\.(\S+) จ\.(\S+)/.match(earthquake['OriginThai'])
+
+      unless m.present?
+        logger.debug "! Skipped #{earthquake['TitleThai']}"
+        next
+      end
+
+      location = Location.find_by(district: m[1], province: m[2])
+
+      unless location.present?
         logger.debug "! Skipped #{earthquake['TitleThai']}"
         next
       end
 
       event = Event.create_with(
         category:    'earthquake',
-        location:    Location.find_by(district: m[1], province: m[2]),
-        source_name: metadata['copyRight'],
+        latitude:    earthquake['Latitude'],
+        location:    location,
+        longitude:   earthquake['Longitude'],
+        source_name: 'กรมอุตุนิยมวิทยา',
         source_url:  metadata['uri'],
-        title:       earthquake['TitleThai'],
-        source_data: earthquake
+        source_data: {
+          content: earthquake,
+          content_type: 'json'
+        }
       ).find_or_create_by(
-        latitude:  earthquake['Latitude'],
-        longitude: earthquake['Longitude'],
-        start_at:  earthquake['DateTimeUTC']
+        title:    earthquake['TitleThai'],
+        start_at: earthquake['DateTimeUTC']
       )
 
       if event.invalid?

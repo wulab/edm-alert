@@ -45,21 +45,24 @@ end
 
 unless Event.any?
   say_with_time "seed(\"events\")" do
+    location = Location.find_by(postal_code: '10260')
     Event.create!([
       {
         category:    'earthquake',
         latitude:    18.9400000,
         location:    Location.find_by(postal_code: '50250'),
         longitude:   98.7000000,
-        source_name: 'Thai Meteorological Department:2558',
+        source_name: 'กรมอุตุนิยมวิทยา',
         source_url:  'http://data.tmd.go.th/api/DailySeismicEvent/v1/?uid=api&ukey=api12345',
         start_at:    '2016-10-07 20:34:37.000',
         title:       'แผ่นดินไหวที่ อ.สะเมิง จ.เชียงใหม่'
       },
       {
         category:    'flood',
+        latitude:    Location.find_by(postal_code: '10260').latitude,
         location:    Location.find_by(postal_code: '10260'),
-        source_name: 'Department of Drainage and Sewerage',
+        longitude:   Location.find_by(postal_code: '10260').longitude,
+        source_name: 'สำนักการระบายน้ำ',
         source_url:  'http://203.155.220.119/DDS_Flooding/',
         start_at:    ActiveSupport::TimeZone['Bangkok'].parse('2016-10-08 17:25:00.000'),
         title:       'น้ำท่วมบริเวณ หน้าสถานีรถไฟแบริ่ง'
