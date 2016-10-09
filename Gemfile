@@ -60,6 +60,9 @@ gem 'sidekiq', github: 'mperham/sidekiq'
 # A scheduler process to replace cron
 gem 'clockwork', '~> 2.0'
 
+#google map for Rails
+gem 'gmaps4rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
