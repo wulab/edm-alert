@@ -17,7 +17,10 @@
           </div>
           <div class="card-block">
             <% if user_signed_in? %>
-                <p class="p">สวัสดี คุณ, <%= current_user.full_name %></p>
+                <p class="p lead">สวัสดี คุณ, <%= current_user.full_name %></p>
+                <p class="p lead">คุณอยู่ในพื้นที่ <%= current_user.location.district %>, <%= current_user.location.province %>
+                <br/>รหัสไปรษณีย์ <%= current_user.location.postal_code %></p>
+                <p class="p lead">เมื่อพื้นที่ของคุณอยู่ในจุดเสี่ยงภัย เราจะแจ้งข้อมูลเตือนภัยให้คุณทราบทันที</p>
             <% else %>
               <%= link_to "สมัคร", new_user_registration_path, class: "btn btn-lg btn-primary" %>
               <%= link_to "เข้าสู่ระบบ", new_user_session_path, class: "btn btn-lg btn-default" %>
