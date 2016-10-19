@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: hackathon_rails_development
+  database: edm_alert_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: hackathon_rails
+  #username: edm_alert
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: hackathon_rails_test
+  database: edm_alert_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: hackathon_rails_production
-  username: hackathon_rails
-  password: <%= ENV['HACKATHON_RAILS_DATABASE_PASSWORD'] %>
+  database: edm_alert_production
+  username: edm_alert
+  password: <%= ENV['EDM_ALERT_DATABASE_PASSWORD'] %>
