@@ -1,24 +1,7 @@
-# README
+# EDM Alert
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+EDM Alert, a winner project of [EDM Hackathon](https://data.go.th/AnnouncementDetails.aspx?id=45), aggregates data from government websites. If a disaster happened within a user’s area, an email alert will sent to the user immediately. So, user can be one step ahead of disaster.
 
-Things you may want to cover:
+## License
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The project is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
