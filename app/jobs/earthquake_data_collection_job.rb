@@ -58,7 +58,7 @@ class EarthquakeDataCollectionJob < ApplicationJob
         source_name: 'กรมอุตุนิยมวิทยา',
         source_url:  uri.to_s,
         source_data: {
-          content: earthquake,
+          content:      earthquake,
           content_type: 'json'
         }
       ).find_or_create_by(
