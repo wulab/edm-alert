@@ -64,7 +64,7 @@ Rails.application.configure do
     address:        'smtp.sendgrid.net',
     user_name:      Rails.application.secrets.sendgrid_username,
     password:       Rails.application.secrets.sendgrid_password,
-    domain:         'example.com',
+    domain:         ENV['DEFAULT_HOST'] || 'edmalert.me',
     authentication: :plain
   }
 
@@ -72,7 +72,7 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] || 'edm_alert.com' }
+  config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] || 'edmalert.me' }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
