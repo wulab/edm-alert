@@ -16,16 +16,5 @@ module EDMAlert
     # and follow the adapter's specific installation
     # and deployment instructions.
     config.active_job.queue_adapter = :sidekiq
-
-    # Action Mailer Configuration for Mailgun
-    ActionMailer::Base.delivery_method = :smtp
-    ActionMailer::Base.smtp_settings = {
-      port:           587,
-      address:        'smtp.mailgun.org',
-      user_name:      ENV['MAILGUN_SMTP_LOGIN'],
-      password:       ENV['MAILGUN_SMTP_PASSWORD'],
-      domain:         'example.com',
-      authentication: :plain,
-    }
   end
 end
