@@ -9,8 +9,9 @@ class FloodDataCollectionJob < ApplicationJob
     logger.debug "Response"
     logger.debug "status=#{response.code} body=#{response.body[0,200]}"
 
-    document = Nokogiri::HTML(response.body)
-    document.css("table.gridtable tr")[3..-1].each do |row|
+    document  = Nokogiri::HTML(response.body)
+    data_rows = document.css("table.gridtable tr")[3..-1] || []
+    data_rows.each do |row|
       title    = "น้ำท่วมขังบริเวณ #{row.css('td')[3].content.strip}"
       district = row.css('td')[1].content.strip
       location = Location.find_by(district: district)
