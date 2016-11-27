@@ -35,7 +35,7 @@ end
 unless User.any?
   say_with_time "seed(\"users\")" do
     User.create!(
-      email:     'please-change-me-at-config-initializers-devise@example.com',
+      email:     Devise.mailer_sender,
       location:  Location.find_by(postal_code: '10260'),
       full_name: 'Default User',
       password:  'passw0rd'

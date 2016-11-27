@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "no-reply@#{Rails.application.secrets.default_host}"
+  default from: Devise.mailer_sender
   layout 'mailer'
 end
