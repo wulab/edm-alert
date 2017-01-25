@@ -71,7 +71,7 @@
 		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
 			padding-top: 20px;" class="hero"><a target="_blank" style="text-decoration: none;"
 			href="https://github.com/konsav/email-templates/"><img border="0" vspace="0" hspace="0"
-			src="http://maps.googleapis.com/maps/api/staticmap?center=18.9400000,98.7000000&zoom=9&scale=false&size=560x315&maptype=roadmap&format=png&visual_refresh=true&markers=icon:https://cloud.githubusercontent.com/assets/403010/19218881/7f6d02f2-8e2f-11e6-8e46-15a64bd84428.png%7Cshadow:true%7C18.9400000,98.7000000"
+			src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @event.latitude %>,<%= @event.longitude %>&zoom=12&scale=false&size=560x315&maptype=roadmap&format=png&visual_refresh=true&markers=icon:https://cloud.githubusercontent.com/assets/403010/19218881/7f6d02f2-8e2f-11e6-8e46-15a64bd84428.png%7Cshadow:true%7C<%= @event.latitude %>,<%= @event.longitude %>"
 			alt="Please enable images to view this content" title="Hero Image"
 			width="560" style="
 			width: 100%;
