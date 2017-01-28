@@ -1,6 +1,35 @@
-<div id="map_container" class="google-map-container star-map-container">
-  <div id="map_canvas" class="google-map canvas-map"></div>
-  <div class="star-map-overflow">
-    <div id="star_canvas" class="star-map canvas-stars"></div>
+<div id="map-page">
+  <div class="dropdown category-select pull-left">
+    <button type="button" class="btn btn-default btn-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      จังหวัด <span class="caret"></span>
+    </button>
+    <ul id="sidebar_container" class="dropdown-menu">
+      <% @event_provinces.each do |province| %>
+      <li><%= link_to province, "/pages/map_with_location/#{province}", data: { turbolinks: false } %></li>
+      <% end %>
+      <li role="separator" class="divider"></li>
+      <li><%= link_to "ทั้งหมด", pages_map_path, data: { turbolinks: false } %></li>
+    </ul>
+  </div>
+
+  <div class="dropdown category-select pull-left">
+    <button type="button" class="btn btn-default btn-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      ประเภท <span class="caret"></span>
+    </button>
+
+    <ul id="sidebar_container" class="dropdown-menu">
+      <% @event_categories.each do |category| %>
+      <li><%= link_to category, "/pages/map_with_category/#{category}", data: { turbolinks: false } %></li>
+      <% end %>
+      <li role="separator" class="divider"></li>
+      <li><%= link_to "ทั้งหมด", pages_map_path, data: { turbolinks: false } %></li>
+    </ul>
+  </div>
+
+  <div id="map_container" class="google-map-container star-map-container">
+    <div id="map_canvas" class="google-map canvas-map"></div>
+    <div class="star-map-overflow">
+      <div id="star_canvas" class="star-map canvas-stars"></div>
+    </div>
   </div>
 </div>
