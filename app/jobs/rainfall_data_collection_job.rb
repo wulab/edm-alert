@@ -23,7 +23,7 @@ class RainfallDataCollectionJob < ApplicationJob
   #           "popupContent": "<strong>สวนสาธารณะเทศบาลตำบลรือเสาะ (STH022)</strong><br>จ.นราธิวาส  อ.รือเสาะ ต.รือเสาะ<br>ฝน 24 ชม  20.4 มม. เวลา 17:00 <a href='http://wea.haii.or.th/graph/zcgraph.php?code=STH022&type=rain24h&schema=south31' data-toggle='lightbox' title='กราฟแสดงฝนรายชั่วโมง'><i class='fa fa-bar-chart'></i></a>"
   #       },
   #       "id": "STH022"
-  #   }
+  #   },
   def perform(*args)
     uri = URI('http://www.thaiwater.net/v3/geojson/rainfall24h')
     logger.debug "request=#{uri}"
@@ -40,7 +40,7 @@ class RainfallDataCollectionJob < ApplicationJob
       address = fields[1]
 
       mm = Float(rainfall['properties']['rainfall'])
-      if mm > 10.0
+      if mm > 35.0
         logger.debug "! Skipped #{title}"
         next
       end
