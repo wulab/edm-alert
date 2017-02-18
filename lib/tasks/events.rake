@@ -13,4 +13,11 @@ namespace :events do
     puts "done."
   end
 
+  desc "Fetch rainfall events"
+  task rainfall: :environment do
+    puts "Fetching new rainfall data..."
+    RainfallDataCollectionJob.perform_later
+    puts "done."
+  end
+
 end

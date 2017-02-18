@@ -24,5 +24,6 @@ en:
   categories:
     earthquake: 'แผ่นดินไหว'
     flood: 'น้ำท่วม'
+    rainfall: 'ฝนตกหนัก'
   locations:
     province: 'จังหวัด'
