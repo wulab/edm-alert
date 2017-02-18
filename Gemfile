@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby ENV['CUSTOM_RUBY_VERSION'] || '2.3.1'
+ruby ENV['CUSTOM_RUBY_VERSION'] || '2.3.3'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -55,7 +55,7 @@ gem 'kaminari'
 gem 'font-awesome-sass', '~> 4.6.2'
 
 # Simple, efficient background processing for Ruby
-gem 'sidekiq', github: 'mperham/sidekiq'
+gem 'sidekiq'
 
 # A scheduler process to replace cron
 gem 'clockwork', '~> 2.0'
