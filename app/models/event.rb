@@ -4,8 +4,8 @@ class Event < ApplicationRecord
   has_many :users, through: :location
   after_create :notify_users
   paginates_per 20
-  scope :this_weeks, -> { where('created_at >= ?', 1.week.ago) }
-  scope :most_recent, -> (limit) { order('created_at desc').limit(limit) }
+  scope :this_weeks, -> { where('start_at >= ?', 1.week.ago) }
+  scope :most_recent, -> (limit) { order('start_at desc').limit(limit) }
 
   private
     def notify_users
