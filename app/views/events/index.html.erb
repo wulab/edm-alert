@@ -29,22 +29,26 @@
 
 <br /><br />
 <hr/>
-<div class="table-responsive">
-  <table class="table table-condensed table-striped table-hover">
-    <thead>
-      <tr>
-        <th>ชื่อเหตุการณ์</th>
-        <th>ประเภท</th>
-        <th>ละติจูด</th>
-        <th>ลองติจูด</th>
-        <th>แหล่งข้อมูล</th>
-        <th>ตำแหน่ง</th>
-        <th>วัน-เวลา</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render :partial => "event", :collection => @events %>
-    </tbody>
-  </table>
-</div>
-<%= paginate @events %>
+<% if @events.present? %>
+  <div class="table-responsive">
+    <table class="table table-condensed table-striped table-hover">
+      <thead>
+        <tr>
+          <th>ชื่อเหตุการณ์</th>
+          <th>ประเภท</th>
+          <th>ละติจูด</th>
+          <th>ลองติจูด</th>
+          <th>แหล่งข้อมูล</th>
+          <th>ตำแหน่ง</th>
+          <th>วัน-เวลา</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render :partial => "event", :collection => @events %>
+      </tbody>
+    </table>
+  </div>
+  <%= paginate @events %>
+<% else %>
+  ไม่มีข้อมูลเตือนภัยใน 7 วันที่ผ่านมา
+<% end %>
