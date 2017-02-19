@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   belongs_to :location
   has_many :users, through: :location
   after_create :notify_users
+  paginates_per 20
 
   private
     def notify_users
