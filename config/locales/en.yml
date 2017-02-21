@@ -20,10 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   categories:
     earthquake: 'แผ่นดินไหว'
     flood: 'น้ำท่วม'
     rainfall: 'ฝนตกหนัก'
   locations:
     province: 'จังหวัด'
+  time:
+    formats:
+      short_date_time: '%d/%m/%Y %T'

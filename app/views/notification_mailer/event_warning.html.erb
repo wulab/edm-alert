@@ -89,7 +89,7 @@
       <% if @event.description? %>
         <%= @event.description %>
       <% else %>
-        รายงานจาก <%= @event.source_name %> พบเหตุ <%= @event.category %> เกิดขึ้นเมื่อ <%=l @event.start_at.in_time_zone('Bangkok'), format: :long %> ตามเวลาในประเทศไทย
+        รายงานจาก <%= @event.source_name %> พบเหตุ <%= t("categories.#{@event.category}") %> เกิดขึ้นเมื่อ <%=l @event.start_at.in_time_zone('Bangkok'), format: :short_date_time %> ตามเวลาในประเทศไทย
       <% end %>
 		</td>
 	</tr>
