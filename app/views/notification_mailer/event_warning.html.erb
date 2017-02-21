@@ -23,7 +23,7 @@
 			<!-- LOGO -->
 			<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2. URL format: http://domain.com/?utm_source={{Campaign-Source}}&utm_medium=email&utm_content=logo&utm_campaign={{Campaign-Name}} -->
 			<a target="_blank" style="text-decoration: none;"
-				href="https://github.com/konsav/email-templates/"><img border="0" vspace="0" hspace="0"
+				href=""><img border="0" vspace="0" hspace="0"
 				src="http://blog.mirbonus.ru/wp-content/uploads/2013/06/Dealies-Cupon-Alert-Logo-MX2.png"
 				width="80" height="53"
 				alt="Logo" title="Logo" style="
@@ -70,7 +70,7 @@
 	<tr>
 		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
 			padding-top: 20px;" class="hero"><a target="_blank" style="text-decoration: none;"
-			href="https://github.com/konsav/email-templates/"><img border="0" vspace="0" hspace="0"
+			href="https://www.google.co.th/maps/@<%= @event.latitude %>,<%= @event.longitude %>,15z"><img border="0" vspace="0" hspace="0"
 			src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @event.latitude %>,<%= @event.longitude %>&zoom=12&scale=false&size=560x315&maptype=roadmap&format=png&visual_refresh=true&markers=icon:https://cloud.githubusercontent.com/assets/403010/19218881/7f6d02f2-8e2f-11e6-8e46-15a64bd84428.png%7Cshadow:true%7C<%= @event.latitude %>,<%= @event.longitude %>"
 			alt="Please enable images to view this content" title="Hero Image"
 			width="560" style="
@@ -94,23 +94,24 @@
 		</td>
 	</tr>
 
-	<!-- BUTTON -->
-	<!-- Set button background color at TD, link/text color at A and TD, font family ("sans-serif" or "Georgia, serif") at TD. For verification codes add "letter-spacing: 5px;". Link format: http://domain.com/?utm_source={{Campaign-Source}}&utm_medium=email&utm_content={{Button-Name}}&utm_campaign={{Campaign-Name}} -->
-	<tr>
-		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
-			padding-top: 25px;
-			padding-bottom: 5px;" class="button"><a
-			href="https://github.com/konsav/email-templates/" target="_blank" style="text-decoration: none;">
-				<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: none; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
-					bgcolor="#E9703E">
-          <a target="_blank" style="text-decoration: none;
-					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 120%;"
-					href="https://edm-chat.firebaseapp.com/?p=<%= @user.location.postal_code %>">
-						แจ้งเหตุในพื้นที่
-					</a>
-			</td></tr></table></a>
-		</td>
-	</tr>
+	<% if @event.source_url.present? %>
+		<!-- BUTTON -->
+		<!-- Set button background color at TD, link/text color at A and TD, font family ("sans-serif" or "Georgia, serif") at TD. For verification codes add "letter-spacing: 5px;". Link format: http://domain.com/?utm_source={{Campaign-Source}}&utm_medium=email&utm_content={{Button-Name}}&utm_campaign={{Campaign-Name}} -->
+		<tr>
+			<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
+				padding-top: 25px;
+				padding-bottom: 5px;" class="button">
+					<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: none; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
+						bgcolor="#E9703E">
+	          <a target="_blank" style="text-decoration: none;
+						color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 120%;"
+						href="<%= truncate_url(@event.source_url) %>">
+							ตรวจสอบแหล่งข้อมูล
+						</a>
+				</td></tr></table>
+			</td>
+		</tr>
+	<% end %>
 
 	<!-- LINE -->
 	<!-- Set line color -->
