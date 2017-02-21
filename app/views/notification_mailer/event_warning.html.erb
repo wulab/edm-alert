@@ -122,90 +122,195 @@
 		</td>
 	</tr>
 
-	<!-- LIST -->
-	<tr>
-		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%;" class="list-item"><table align="center" border="0" cellspacing="0" cellpadding="0" style="width: inherit; margin: 0; padding: 0; border-collapse: collapse; border-spacing: 0;">
+<% if @event.category == "flood" || @event.category == "rainfall" %>
+		<tr>
+			<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%;" class="list-item"><table align="center" border="0" cellspacing="0" cellpadding="0" style="width: inherit; margin: 0; padding: 0; border-collapse: collapse; border-spacing: 0;">
+				<!-- LIST ITEM -->
+				<tr>
+					<!-- LIST ITEM IMAGE -->
+					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+						padding-top: 30px;
+						padding-right: 20px;"><img
+					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+						color: #000000;"
+						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/map-o.png"
+						alt="H" title="Highly compatible"
+						width="50" height="50"></td>
 
-			<!-- LIST ITEM -->
-			<tr>
+					<!-- LIST ITEM TEXT -->
+					<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+						padding-top: 25px;
+						color: #000000;
+						font-family: sans-serif;" class="paragraph">
+							<b style="color: #333333;">ก่อนน้ำท่วม</b><br/>
+							<ul>
+								<li>สมัครและรอรับรับข่าวเตือนภัยจากเรา</li>
+								<li>ดูข้อมูลน้ำท่วมในเขตของคุณ ที่นี่</li>
+								<li>ปิดน้ำ, ไฟฟ้า และ แก๊ส ภายในบ้าน</li>
+							</ul>
+					</td>
 
-				<!-- LIST ITEM IMAGE -->
-				<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
-				<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
-					padding-top: 30px;
-					padding-right: 20px;"><img
-				border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
-					color: #000000;"
-					src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/map-o.png"
-					alt="H" title="Highly compatible"
-					width="50" height="50"></td>
+				</tr>
 
-				<!-- LIST ITEM TEXT -->
-				<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
-				<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
-					padding-top: 25px;
-					color: #000000;
-					font-family: sans-serif;" class="paragraph">
-						<b style="color: #333333;">วางแผนสิ่งที่ควรปฏิบัติ</b><br/>
-            วางแผนที่จะติดต่อสื่อสารถึง เพื่อน ญาติพี่น้อง หรือครอบครัว เผื่อไว้หลายๆ รูปแบบ หากโทรศัพท์บ้านหรือโทรศัพท์มือถือใช้การไม่ได้ ก็อาจใช้อีเมลแทน
-				</td>
+				<!-- LIST ITEM -->
+				<tr>
 
-			</tr>
+					<!-- LIST ITEM IMAGE -->
+					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+						padding-top: 30px;
+						padding-right: 20px;"><img
+					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+						color: #000000;"
+						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/warning.png"
+						alt="D" title="Designer friendly"
+						width="50" height="50"></td>
 
-			<!-- LIST ITEM -->
-			<tr>
+					<!-- LIST ITEM TEXT -->
+					<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+						padding-top: 25px;
+						color: #000000;
+						font-family: sans-serif;" class="paragraph">
+							<b style="color: #333333;">ขณะน้ำท่วม</b><br/>
+							<ul>
+								<li>โทรขอความช่วยเหลือไปยัง 1111 กด 5 <a href="http://www.dgr.go.th/flood/" target="_blank">(ศปภ.)</a></li>
+								<li>หลีกเลี่ยงการเดินทางในจุดน้ำท่วม</li>
+								<li>ให้ความช่วยเหลือ หรือขอความช่วยเหลือจากเพื่อนบ้าน</li>
+							</ul>
+					</td>
 
-				<!-- LIST ITEM IMAGE -->
-				<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
-				<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
-					padding-top: 30px;
-					padding-right: 20px;"><img
-				border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
-					color: #000000;"
-					src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/shopping-basket.png"
-					alt="D" title="Designer friendly"
-					width="50" height="50"></td>
+				</tr>
 
-				<!-- LIST ITEM TEXT -->
-				<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
-				<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
-					padding-top: 25px;
-					color: #000000;
-					font-family: sans-serif;" class="paragraph">
-						<b style="color: #333333;">เตรียมรวบรวมสิ่งของเครื่องใช้ที่จำเป็น</b><br/>
-            เอกสารสำคัญประจำตัว เช่น หนังสือเดินทาง ใบขับขี่ บัตรประกันสุขภาพ และอื่นๆ ควรเก็บไว้ในถุงพลาสติกหรือแฟ้มที่กันน้ำได้ น้ำสะอาดสำหรับใช้ดื่ม อาหารแห้ง สำเร็จรูป เครื่องกระป๋อง ให้เพียงพอ อย่างน้อย 3 วัน
-				</td>
+	      <!-- LIST ITEM -->
+				<tr>
 
-			</tr>
+					<!-- LIST ITEM IMAGE -->
+					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+						padding-top: 30px;
+						padding-right: 20px;"><img
+					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+						color: #000000;"
+						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/support.png"
+						alt="D" title="Designer friendly"
+						width="50" height="50"></td>
 
-      <!-- LIST ITEM -->
-			<tr>
+					<!-- LIST ITEM TEXT -->
+					<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+						padding-top: 25px;
+						color: #000000;
+						font-family: sans-serif;" class="paragraph">
+							<b style="color: #333333;">หลังน้ำท่วม</b><br/>
+							<ul>
+								<li>เลี่ยงการใช้แก๊ส, ไฟฟ้า ก่อนตรวจสอบจากช่าง</li>
+								<li>เลี่ยงอาหารที่สัมผัสน้ำท่วม</li>
+								<li>โทรสอบถามการประปา ก่อนการใช้น้ำ</li>
+							</ul>
+					</td>
+				</tr>
 
-				<!-- LIST ITEM IMAGE -->
-				<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
-				<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
-					padding-top: 30px;
-					padding-right: 20px;"><img
-				border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
-					color: #000000;"
-					src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/newspaper-o.png"
-					alt="D" title="Designer friendly"
-					width="50" height="50"></td>
+				<!-- BUTTON -->
+				<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tbody><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: none; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;" bgcolor="#E9703E">
+	          <a target="_blank" style="text-decoration: none;
+						color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 120%;" href="http://www.edmalert.me" target="_blank">
+							อ่านต่อทั้งหมด
+						</a>
+					</td></tr></tbody>
+				</table>
+			</td>
+		</tr>
+	<% else %>
 
-				<!-- LIST ITEM TEXT -->
-				<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
-				<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
-					padding-top: 25px;
-					color: #000000;
-					font-family: sans-serif;" class="paragraph">
-						<b style="color: #333333;">ติดตามข่าวสารในเขตพื้นที่ที่พักอาศัย</b><br/>
-            ควรรับฟังข่าวสาร ประกาศเตือน จากทางสื่อวิทยุ โทรทัศน์ อินเตอร์เน็ท เป็นประจำทุกวัน พร้อมที่จะปรับใช้แผนที่เตรียมไว้ เข้ากับสถานะการณ์ที่เกิดขึ้นได้อย่างเหมาะสม
-				</td>
+		<!-- LIST -->
+		<tr>
+			<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%;" class="list-item"><table align="center" border="0" cellspacing="0" cellpadding="0" style="width: inherit; margin: 0; padding: 0; border-collapse: collapse; border-spacing: 0;">
 
-			</tr>
+				<!-- LIST ITEM -->
+				<tr>
 
-		</table></td>
-	</tr>
+					<!-- LIST ITEM IMAGE -->
+					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+						padding-top: 30px;
+						padding-right: 20px;"><img
+					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+						color: #000000;"
+						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/map-o.png"
+						alt="H" title="Highly compatible"
+						width="50" height="50"></td>
+
+					<!-- LIST ITEM TEXT -->
+					<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+						padding-top: 25px;
+						color: #000000;
+						font-family: sans-serif;" class="paragraph">
+							<b style="color: #333333;">วางแผนสิ่งที่ควรปฏิบัติ</b><br/>
+	            วางแผนที่จะติดต่อสื่อสารถึง เพื่อน ญาติพี่น้อง หรือครอบครัว เผื่อไว้หลายๆ รูปแบบ หากโทรศัพท์บ้านหรือโทรศัพท์มือถือใช้การไม่ได้ ก็อาจใช้อีเมลแทน
+					</td>
+
+				</tr>
+
+				<!-- LIST ITEM -->
+				<tr>
+
+					<!-- LIST ITEM IMAGE -->
+					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+						padding-top: 30px;
+						padding-right: 20px;"><img
+					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+						color: #000000;"
+						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/shopping-basket.png"
+						alt="D" title="Designer friendly"
+						width="50" height="50"></td>
+
+					<!-- LIST ITEM TEXT -->
+					<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+						padding-top: 25px;
+						color: #000000;
+						font-family: sans-serif;" class="paragraph">
+							<b style="color: #333333;">เตรียมรวบรวมสิ่งของเครื่องใช้ที่จำเป็น</b><br/>
+	            เอกสารสำคัญประจำตัว เช่น หนังสือเดินทาง ใบขับขี่ บัตรประกันสุขภาพ และอื่นๆ ควรเก็บไว้ในถุงพลาสติกหรือแฟ้มที่กันน้ำได้ น้ำสะอาดสำหรับใช้ดื่ม อาหารแห้ง สำเร็จรูป เครื่องกระป๋อง ให้เพียงพอ อย่างน้อย 3 วัน
+					</td>
+
+				</tr>
+
+	      <!-- LIST ITEM -->
+				<tr>
+
+					<!-- LIST ITEM IMAGE -->
+					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+						padding-top: 30px;
+						padding-right: 20px;"><img
+					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+						color: #000000;"
+						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/newspaper-o.png"
+						alt="D" title="Designer friendly"
+						width="50" height="50"></td>
+
+					<!-- LIST ITEM TEXT -->
+					<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+						padding-top: 25px;
+						color: #000000;
+						font-family: sans-serif;" class="paragraph">
+							<b style="color: #333333;">ติดตามข่าวสารในเขตพื้นที่ที่พักอาศัย</b><br/>
+	            ควรรับฟังข่าวสาร ประกาศเตือน จากทางสื่อวิทยุ โทรทัศน์ อินเตอร์เน็ท เป็นประจำทุกวัน พร้อมที่จะปรับใช้แผนที่เตรียมไว้ เข้ากับสถานะการณ์ที่เกิดขึ้นได้อย่างเหมาะสม
+					</td>
+
+				</tr>
+
+			</table></td>
+		</tr>
+
+	<% end %>
 
 	<!-- LINE -->
 	<!-- Set line color -->
