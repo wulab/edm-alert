@@ -122,7 +122,7 @@
 		</td>
 	</tr>
 
-<% if @event.category == "flood" || @event.category == "rainfall" %>
+	<% if @event.category == "flood" || @event.category == "rainfall" %>
 		<tr>
 			<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%;" class="list-item"><table align="center" border="0" cellspacing="0" cellpadding="0" style="width: inherit; margin: 0; padding: 0; border-collapse: collapse; border-spacing: 0;">
 				<!-- LIST ITEM -->
@@ -225,13 +225,10 @@
 		</tr>
 	<% else %>
 
-		<!-- LIST -->
 		<tr>
 			<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%;" class="list-item"><table align="center" border="0" cellspacing="0" cellpadding="0" style="width: inherit; margin: 0; padding: 0; border-collapse: collapse; border-spacing: 0;">
-
 				<!-- LIST ITEM -->
 				<tr>
-
 					<!-- LIST ITEM IMAGE -->
 					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
 					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
@@ -249,8 +246,12 @@
 						padding-top: 25px;
 						color: #000000;
 						font-family: sans-serif;" class="paragraph">
-							<b style="color: #333333;">วางแผนสิ่งที่ควรปฏิบัติ</b><br/>
-	            วางแผนที่จะติดต่อสื่อสารถึง เพื่อน ญาติพี่น้อง หรือครอบครัว เผื่อไว้หลายๆ รูปแบบ หากโทรศัพท์บ้านหรือโทรศัพท์มือถือใช้การไม่ได้ ก็อาจใช้อีเมลแทน
+							<b style="color: #333333;">ก่อนแผ่นดินไหว</b><br/>
+							<ul>
+								<li>สมัครและรอรับรับข่าวเตือนภัยจากเรา</li>
+								<li>ดูข้อมูลน้ำท่วมในเขตของคุณ ที่นี่</li>
+								<li>ฝึกเคลื่อนย้ายสู่สถานที่ปลอดภัยเช่น ใต้โต๊ะ หรือที่โล่งแจ้ง</li>
+							</ul>
 					</td>
 
 				</tr>
@@ -265,7 +266,7 @@
 						padding-right: 20px;"><img
 					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
 						color: #000000;"
-						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/shopping-basket.png"
+						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/warning.png"
 						alt="D" title="Designer friendly"
 						width="50" height="50"></td>
 
@@ -275,13 +276,17 @@
 						padding-top: 25px;
 						color: #000000;
 						font-family: sans-serif;" class="paragraph">
-							<b style="color: #333333;">เตรียมรวบรวมสิ่งของเครื่องใช้ที่จำเป็น</b><br/>
-	            เอกสารสำคัญประจำตัว เช่น หนังสือเดินทาง ใบขับขี่ บัตรประกันสุขภาพ และอื่นๆ ควรเก็บไว้ในถุงพลาสติกหรือแฟ้มที่กันน้ำได้ น้ำสะอาดสำหรับใช้ดื่ม อาหารแห้ง สำเร็จรูป เครื่องกระป๋อง ให้เพียงพอ อย่างน้อย 3 วัน
+							<b style="color: #333333;">ขณะแผ่นดินไหว (หากอยู่ในอาคาร)</b><br/>
+							<ul>
+								<li>เคลื่อนย้ายสู่สถานที่ปลอดภัยเช่น ใต้โต๊ะ</li>
+								<li>หลีกเลี่ยงการวิ่งออกจากอาคาร</li>
+								<li>หลีกเลี่ยงการอยู่ใกล้กระจก ผนัง และสิ่งของที่อาจล้มทับ</li>
+							</ul>
 					</td>
 
 				</tr>
 
-	      <!-- LIST ITEM -->
+				<!-- LIST ITEM -->
 				<tr>
 
 					<!-- LIST ITEM IMAGE -->
@@ -291,7 +296,7 @@
 						padding-right: 20px;"><img
 					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
 						color: #000000;"
-						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/newspaper-o.png"
+						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/support.png"
 						alt="D" title="Designer friendly"
 						width="50" height="50"></td>
 
@@ -301,13 +306,24 @@
 						padding-top: 25px;
 						color: #000000;
 						font-family: sans-serif;" class="paragraph">
-							<b style="color: #333333;">ติดตามข่าวสารในเขตพื้นที่ที่พักอาศัย</b><br/>
-	            ควรรับฟังข่าวสาร ประกาศเตือน จากทางสื่อวิทยุ โทรทัศน์ อินเตอร์เน็ท เป็นประจำทุกวัน พร้อมที่จะปรับใช้แผนที่เตรียมไว้ เข้ากับสถานะการณ์ที่เกิดขึ้นได้อย่างเหมาะสม
+							<b style="color: #333333;">หลังแผ่นดินไหว</b><br/>
+							<ul>
+								<li>เคลื่อนย้ายสู่ที่โล่ง ห่างจากอาคาร</li>
+								<li>หากคุณถูกกดทับ ไม่สามารถเคลื่อนไหว พยายามหาสิ่งของ เคาะให้เกิดเสียง เพื่อขอความช่วยเหลือ</li>
+								<li>เตรียมพร้อมหากเกิดแผ่นดินไหวอีกครั้ง</li>
+							</ul>
 					</td>
-
 				</tr>
 
-			</table></td>
+				<!-- BUTTON -->
+				<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tbody><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: none; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;" bgcolor="#E9703E">
+						<a target="_blank" style="text-decoration: none;
+						color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 120%;" href="http://www.edmalert.me" target="_blank">
+							อ่านต่อทั้งหมด
+						</a>
+					</td></tr></tbody>
+				</table>
+			</td>
 		</tr>
 
 	<% end %>
