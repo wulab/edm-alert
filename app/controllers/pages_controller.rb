@@ -5,7 +5,7 @@ class PagesController < ApplicationController
       marker.lat event.latitude
       marker.lng event.longitude
       marker.title event.title
-      marker.infowindow event.title
+      marker.infowindow render_to_string(:partial => "/events/infowindow", :locals => { :event_title => event.title, :event_source_url => event.source_url, event_date: event.start_at.strftime("วันที่: %-d/%-m/%y เวลา %H:%M") })
       marker.json({
         :clickable => true,
         :center => [event.latitude, event.longitude]
@@ -27,7 +27,7 @@ class PagesController < ApplicationController
       marker.lat event.latitude
       marker.lng event.longitude
       marker.title event.title
-      marker.infowindow event.title
+      marker.infowindow render_to_string(:partial => "/events/infowindow", :locals => { :event_title => event.title, :event_source_url => event.source_url, event_date: event.start_at.strftime("วันที่: %-d/%-m/%y เวลา %H:%M") })
       marker.json({
         :clickable => true,
         :center => [event.latitude, event.longitude]
@@ -50,7 +50,7 @@ class PagesController < ApplicationController
       marker.lat event.latitude
       marker.lng event.longitude
       marker.title event.title
-      marker.infowindow event.title
+      marker.infowindow render_to_string(:partial => "/events/infowindow", :locals => { :event_title => event.title, :event_source_url => event.source_url, event_date: event.start_at.strftime("วันที่: %-d/%-m/%y เวลา %H:%M") })
       marker.json({
         :clickable => true,
         :center => [event.latitude, event.longitude]
@@ -74,7 +74,7 @@ class PagesController < ApplicationController
       marker.lat event.latitude
       marker.lng event.longitude
       marker.title event.title
-      marker.infowindow event.title
+      marker.infowindow render_to_string(:partial => "/events/infowindow", :locals => { :event_title => event.title, :event_source_url => event.source_url, event_date: event.start_at.strftime("วันที่: %-d/%-m/%y เวลา %H:%M") })
       marker.json({
         :clickable => true,
         :center => [event.latitude, event.longitude]

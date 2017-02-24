@@ -3,7 +3,7 @@
   <td><%= t("categories.#{event.category}") %></td>
   <td><%= event.latitude %></td>
   <td><%= event.longitude %></td>
-  <td><%= event.source_name %></td>
+  <td><%= link_to event.source_name, truncate_url(event.source_url), target: "_blank" %></td>
   <td><%= "#{event.location.district}, #{event.location.province}" %></td>
   <td><%= event.start_at.strftime("%-d/%-m/%y: %H:%M") %></td>
 </tr>
