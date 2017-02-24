@@ -48,6 +48,13 @@
         var markers = handler.addMarkers(json_array);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
+
+        var i = 0;
+        setInterval(function () {
+          if (i == markers.length) i = 0;
+          google.maps.event.trigger(markers[i].getServiceObject(), 'click');
+          i++;
+        }, 3000);
       }
       else {
         alert("ไม่มีข้อมูลเตือนภัยใน 7 วันที่ผ่านมา");

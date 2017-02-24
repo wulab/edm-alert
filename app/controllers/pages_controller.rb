@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @events = Event.all.this_weeks
+    @events = Event.all.this_weeks.most_recent(50)
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
       marker.lat event.latitude
       marker.lng event.longitude
@@ -20,7 +20,7 @@ class PagesController < ApplicationController
   end
 
   def map
-    @events = Event.all.this_weeks.most_recent(100)
+    @events = Event.all.this_weeks.most_recent(50)
     @event_provinces = Location.joins(:events).pluck(:province).uniq
     @event_categories = Event.categories.keys
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
