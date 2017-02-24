@@ -11,9 +11,10 @@ class PagesController < ApplicationController
         :center => [event.latitude, event.longitude]
       })
       marker.picture({
-        :width   => 20,
-        :height  => 20,
-        :anchor  => [10, 10]
+        :width   => 32,
+        :height  => 37,
+        :anchor  => [10, 10],
+        :url     => view_context.image_path("#{event.category}.png")
       })
     end
   end
@@ -32,9 +33,10 @@ class PagesController < ApplicationController
         :center => [event.latitude, event.longitude]
       })
       marker.picture({
-        :width   => 20,
-        :height  => 20,
-        :anchor  => [10, 10]
+        :width   => 32,
+        :height  => 37,
+        :anchor  => [10, 10],
+        :url     => view_context.image_path("#{event.category}.png")
       })
     end
   end
@@ -54,9 +56,10 @@ class PagesController < ApplicationController
         :center => [event.latitude, event.longitude]
       })
       marker.picture({
-        :width   => 20,
-        :height  => 20,
-        :anchor  => [10, 10]
+        :width   => 32,
+        :height  => 37,
+        :anchor  => [10, 10],
+        :url     => view_context.image_path("#{event.category}.png")
       })
     end
     render :map
@@ -77,9 +80,10 @@ class PagesController < ApplicationController
         :center => [event.latitude, event.longitude]
       })
       marker.picture({
-        :width   => 20,
-        :height  => 20,
-        :anchor  => [10, 10]
+        :width   => 32,
+        :height  => 37,
+        :anchor  => [10, 10],
+        :url     => view_context.image_path("#{event.category}.png")
       })
     end
     render :map
