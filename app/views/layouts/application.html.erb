@@ -44,9 +44,14 @@
     },
     function(){
       var json_array = <%=raw @hash.to_json %>
-      var markers = handler.addMarkers(json_array);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
+      if (json_array.length > 0) {
+        var markers = handler.addMarkers(json_array);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      }
+      else {
+        alert("ไม่มีข้อมูลเตือนภัยใน 7 วันที่ผ่านมา");
+      }
     }
   );
   </script>

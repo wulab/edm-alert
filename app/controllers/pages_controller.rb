@@ -20,7 +20,7 @@ class PagesController < ApplicationController
   end
 
   def map
-    @events = Event.all.most_recent(100)
+    @events = Event.all.this_weeks.most_recent(100)
     @event_provinces = Location.joins(:events).pluck(:province).uniq
     @event_categories = Event.categories.keys
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
@@ -42,7 +42,7 @@ class PagesController < ApplicationController
   end
 
   def map_with_location
-    @events = Event.joins(:location).where(locations: { province: params[:location] }).order(start_at: :desc).most_recent(20)
+    @events = Event.joins(:location).where(locations: { province: params[:location] }).order(start_at: :desc).this_weeks.most_recent(20)
     @event_provinces = Location.joins(:events).pluck(:province).uniq
     @event_categories = Event.categories.keys
 
@@ -66,7 +66,7 @@ class PagesController < ApplicationController
   end
 
   def map_with_category
-    @events = Event.where(category: params[:category]).order(start_at: :desc).most_recent(20)
+    @events = Event.where(category: params[:category]).order(start_at: :desc).this_weeks.most_recent(20)
     @event_provinces = Location.joins(:events).pluck(:province).uniq
     @event_categories = Event.categories.keys - [params[:category]]
 
