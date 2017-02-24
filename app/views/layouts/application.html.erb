@@ -30,7 +30,7 @@
   <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 
   <script type="text/javascript">
-  handler = Gmaps.build('Google');
+  handler = Gmaps.build('Google', { markers: { clusterer: undefined  }});
   handler.buildMap({
       provider: {
         disableDefaultUI: true,
