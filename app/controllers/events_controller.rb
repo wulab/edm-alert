@@ -10,6 +10,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   def category
     @events = Event.where(category: params[:category]).order(start_at: :desc).page(params[:page]).this_weeks
     @event_categories = Event.categories.keys - [params[:category]]

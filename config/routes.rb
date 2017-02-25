@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'user/omniauth_callbacks'
   }
 
-  resources :events, only: :index
+  resources :events , only: [:index, :show]
   get 'pages/about'
   get 'pages/map'
   get 'pages/map_with_location/:location', to: 'pages#map_with_location'

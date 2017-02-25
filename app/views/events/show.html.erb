@@ -1,0 +1,254 @@
+<h1><%= @event.title %></h1>
+
+<div class="row">
+  <div class="col-lg-12">
+    <p><%= @event.start_at.strftime("วันที่: %-d/%-m/%y เวลา %H:%M") %></p>
+    <p>แหล่งข้อมูลอ้างอิง: <%= link_to truncate_url(@event.source_url), truncate_url(@event.source_url), target: "_blank" %></p>
+    <div id="event-map"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-9">
+
+    <p style="font-size: 17px; font-weight: 400;
+      padding-top: 25px;">
+      <b>เตรียมตัวรับมือภัยพิบัติ</b>
+    </p>
+
+    <% if @event.category == "flood" || @event.category == "rainfall" %>
+  		<tr>
+  			<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%;" class="list-item"><table align="center" border="0" cellspacing="0" cellpadding="0" style="width: inherit; margin: 0; padding: 0; border-collapse: collapse; border-spacing: 0;">
+  				<!-- LIST ITEM -->
+  				<tr>
+  					<!-- LIST ITEM IMAGE -->
+  					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+  					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+  						padding-top: 30px;
+  						padding-right: 20px;"><img
+  					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+  						color: #000000;"
+  						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/map-o.png"
+  						alt="H" title="Highly compatible"
+  						width="50" height="50"></td>
+
+  					<!-- LIST ITEM TEXT -->
+  					<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+  					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+  						padding-top: 25px;
+  						color: #000000;
+  						font-family: sans-serif;" class="paragraph">
+  							<b style="color: #333333;">ก่อนน้ำท่วม</b><br/>
+  							<ul>
+  								<li>สมัครและรอรับรับข่าวเตือนภัยจากเรา</li>
+  								<li>ดูข้อมูลน้ำท่วมในเขตของคุณ ที่นี่</li>
+  								<li>ปิดน้ำ, ไฟฟ้า และ แก๊ส ภายในบ้าน</li>
+  							</ul>
+  					</td>
+
+  				</tr>
+
+  				<!-- LIST ITEM -->
+  				<tr>
+
+  					<!-- LIST ITEM IMAGE -->
+  					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+  					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+  						padding-top: 30px;
+  						padding-right: 20px;"><img
+  					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+  						color: #000000;"
+  						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/warning.png"
+  						alt="D" title="Designer friendly"
+  						width="50" height="50"></td>
+
+  					<!-- LIST ITEM TEXT -->
+  					<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+  					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+  						padding-top: 25px;
+  						color: #000000;
+  						font-family: sans-serif;" class="paragraph">
+  							<b style="color: #333333;">ขณะน้ำท่วม</b><br/>
+  							<ul>
+  								<li>โทรขอความช่วยเหลือไปยัง 1111 กด 5 <a href="http://www.dgr.go.th/flood/" target="_blank">(ศปภ.)</a></li>
+  								<li>หลีกเลี่ยงการเดินทางในจุดน้ำท่วม</li>
+  								<li>ให้ความช่วยเหลือ หรือขอความช่วยเหลือจากเพื่อนบ้าน</li>
+  							</ul>
+  					</td>
+
+  				</tr>
+
+  	      <!-- LIST ITEM -->
+  				<tr>
+
+  					<!-- LIST ITEM IMAGE -->
+  					<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+  					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+  						padding-top: 30px;
+  						padding-right: 20px;"><img
+  					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+  						color: #000000;"
+  						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/support.png"
+  						alt="D" title="Designer friendly"
+  						width="50" height="50"></td>
+
+  					<!-- LIST ITEM TEXT -->
+  					<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+  					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+  						padding-top: 25px;
+  						color: #000000;
+  						font-family: sans-serif;" class="paragraph">
+  							<b style="color: #333333;">หลังน้ำท่วม</b><br/>
+  							<ul>
+  								<li>เลี่ยงการใช้แก๊ส, ไฟฟ้า ก่อนตรวจสอบจากช่าง</li>
+  								<li>เลี่ยงอาหารที่สัมผัสน้ำท่วม</li>
+  								<li>โทรสอบถามการประปา ก่อนการใช้น้ำ</li>
+  							</ul>
+  					</td>
+  				</tr>
+
+  				<!-- BUTTON -->
+  				<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;">
+  				</table>
+  			</td>
+  		</tr>
+  	<% else %>
+  		<tr>
+  			<td>
+          <table>
+  				<tr>
+  					<td valign="top" style="padding-top: 30px; padding-right: 20px;">
+              <img src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/map-o.png">
+            </td>
+  					<td style="font-size: 17px; font-weight: 400;
+  						padding-top: 25px;" class="paragraph">
+  							<b style="color: #333333;">ก่อนแผ่นดินไหว</b><br/>
+  							<ul>
+  								<li>สมัครและรอรับรับข่าวเตือนภัยจากเรา</li>
+  								<li>ดูข้อมูลน้ำท่วมในเขตของคุณ ที่นี่</li>
+  								<li>ฝึกเคลื่อนย้ายสู่สถานที่ปลอดภัยเช่น ใต้โต๊ะ หรือที่โล่งแจ้ง</li>
+  							</ul>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+  						padding-top: 30px;
+  						padding-right: 20px;"><img
+  					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+  						color: #000000;"
+  						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/warning.png"
+  						alt="D" title="Designer friendly"
+  						width="50" height="50"></td>
+
+  					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+  						padding-top: 25px;
+  						color: #000000;
+  						font-family: sans-serif;" class="paragraph">
+  							<b style="color: #333333;">ขณะแผ่นดินไหว (หากอยู่ในอาคาร)</b><br/>
+  							<ul>
+  								<li>เคลื่อนย้ายสู่สถานที่ปลอดภัยเช่น ใต้โต๊ะ</li>
+  								<li>หลีกเลี่ยงการวิ่งออกจากอาคาร</li>
+  								<li>หลีกเลี่ยงการอยู่ใกล้กระจก ผนัง และสิ่งของที่อาจล้มทับ</li>
+  							</ul>
+  					</td>
+  				</tr>
+  				<tr>
+  					<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
+  						padding-top: 30px;
+  						padding-right: 20px;"><img
+  					border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+  						color: #000000;"
+  						src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/support.png"
+  						alt="D" title="Designer friendly"
+  						width="50" height="50"></td>
+
+  					<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+  						padding-top: 25px;
+  						color: #000000;
+  						font-family: sans-serif;" class="paragraph">
+  							<b style="color: #333333;">หลังแผ่นดินไหว</b><br/>
+  							<ul>
+  								<li>เคลื่อนย้ายสู่ที่โล่ง ห่างจากอาคาร</li>
+  								<li>หากคุณถูกกดทับ ไม่สามารถเคลื่อนไหว พยายามหาสิ่งของ เคาะให้เกิดเสียง เพื่อขอความช่วยเหลือ</li>
+  								<li>เตรียมพร้อมหากเกิดแผ่นดินไหวอีกครั้ง</li>
+  							</ul>
+  					</td>
+  				</tr>
+
+  				<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;">
+  				</table>
+  			</td>
+  		</tr>
+
+  	<% end %>
+
+
+
+  </div>
+
+
+  <div class="col-lg-3" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+    padding-top: 25px;">
+    <b>ขอความช่วยเหลือพื้นที่ใกล้เคียง</b>
+
+
+
+    <div id="contacts" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+      padding-top: 25px;">
+      <ul>
+        <li class="mdl-list__item mdl-list__item--three-line" id="45">
+            <span class="name">โรงพยาบาลกรุงเทพคริสเตียน
+            </span><br>
+            โทรศัพท์: <a href="tel:022336981">02-233-6981 ถึง 9</a>
+            <br>
+            <a href="http://maps.google.com/?q=124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500" target="_blank">124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500
+            </a>
+        </li>
+        <li class="mdl-list__item mdl-list__item--three-line" id="45">
+            <span class="name">โรงพยาบาลกรุงเทพคริสเตียน
+            </span><br>
+            โทรศัพท์: <a href="tel:022336981">02-233-6981 ถึง 9</a>
+            <br>
+            <a href="http://maps.google.com/?q=124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500" target="_blank">124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500
+            </a>
+        </li>
+        <li class="mdl-list__item mdl-list__item--three-line" id="45">
+            <span class="name">โรงพยาบาลกรุงเทพคริสเตียน
+            </span><br>
+            โทรศัพท์: <a href="tel:022336981">02-233-6981 ถึง 9</a>
+            <br>
+            <a href="http://maps.google.com/?q=124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500" target="_blank">124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500
+            </a>
+        </li>
+        <li class="mdl-list__item mdl-list__item--three-line" id="45">
+            <span class="name">โรงพยาบาลกรุงเทพคริสเตียน
+            </span><br>
+            โทรศัพท์: <a href="tel:022336981">02-233-6981 ถึง 9</a>
+            <br>
+            <a href="http://maps.google.com/?q=124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500" target="_blank">124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'event-map'}}, function(){
+  markers = handler.addMarkers([
+    {
+      "lat": "<%= @event.latitude %>",
+      "lng": "<%= @event.longitude %>",
+      "picture": {
+        "url": "<%= image_path("#{@event.category}.png") %>",
+        "width":  32,
+        "height": 37
+      },
+      "infowindow": "<%= @event.title %>"
+    }
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  google.maps.event.trigger(markers[0].getServiceObject(), 'click');
+  });
+</script>
