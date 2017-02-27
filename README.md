@@ -13,3 +13,5 @@ The project is available as open source under the terms of the [MIT License](htt
 ![data-screenshot](https://cloud.githubusercontent.com/assets/403010/19552823/baaa8cfe-96db-11e6-8373-766ce3752b4f.png)
 
 ![warning-email](https://cloud.githubusercontent.com/assets/403010/19553251/a25ba42e-96dd-11e6-8693-d16aba2453d8.png)
+
+![edm_pitch](https://cloud.githubusercontent.com/assets/403010/23370724/37b634d2-fd48-11e6-9330-4b000aa1286b.png)
