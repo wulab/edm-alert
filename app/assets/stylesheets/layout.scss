@@ -73,3 +73,35 @@
 #event-map {
   height: 300px;
 }
+
+.warning-preparation, .warning-emergency-contact {
+  h3 {
+    padding-top: 2rem;
+    line-height: 1.5;
+  }
+  ul li, p {
+    font-size: 18px;
+  }
+}
+
+.warning-preparation  {
+  .row {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  i {
+    margin-top: 1rem;
+    font-size: 40px;
+  }
+}
+
+.warning-emergency-contact .contact-card {
+  padding: 1rem;
+  border-bottom: 1px solid #DCDCDC;
+  i {
+    color: #A9A9A9;
+  }
+  a {
+    color: #000;
+  }
+}
