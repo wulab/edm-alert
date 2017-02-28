@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-lg-12">
     <p><%= @event.start_at.strftime("วันที่: %-d/%-m/%y เวลา %H:%M") %></p>
-    <p>แหล่งข้อมูลอ้างอิง: <%= link_to truncate_url(@event.source_url), truncate_url(@event.source_url), target: "_blank" %></p>
+    <p>แหล่งข้อมูลอ้างอิง: <%= external_link_to truncate_url(@event.source_url), truncate_url(@event.source_url) %></p>
     <div id="event-map"></div>
   </div>
 </div>
@@ -22,18 +22,17 @@
     <div class="col-md-3 warning-emergency-contact">
       <h3><strong>ขอความช่วยเหลือพื้นที่ใกล้เคียง</h3></strong>
       <div class="contact-card">
-        <p><%= icon('hospital-o') %> ร.พ. กรุงเทพคริสเตียน</p>
+        <p>
+          <%= icon('hospital-o') %>
+          <%= external_link_to("ร.พ. กรุงเทพคริสเตียน", "http://www.google.com/search?q=ร.พ. กรุงเทพคริสเตียน") %>
+        </p>
         <p>
           <%= icon('phone') %>
-          <a href="tel:022336981" target="_blank">
-             02-233-6981 ถึง 9
-          </a>
+            <%= external_link_to("02-233-6981 ถึง 9", "tel:022336981") %>
          </p>
         <p>
           <%= icon('map-marker') %>
-          <a href="http://maps.google.com/?q=124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500" target="_blank">
-             124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500
-          </a>
+          <%= external_link_to("124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500", "http://maps.google.com/?q=124 สีลม สุริยวงศ์ บางรัก กรุงเทพมหานคร 10500") %>
         </p>
       </div>
     </div>
