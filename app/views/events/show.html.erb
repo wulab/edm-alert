@@ -41,7 +41,7 @@
 
 <script type="text/javascript">
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'event-map'}}, function(){
+  handler.buildMap({ provider: { maxZoom: 15 }, internal: {id: 'event-map'}}, function(){
   markers = handler.addMarkers([
     {
       "lat": "<%= @event.latitude %>",
