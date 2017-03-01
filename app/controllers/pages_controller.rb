@@ -42,7 +42,7 @@ class PagesController < ApplicationController
         partial: "/events/infowindow",
         locals: { event_title: event.title,
           event_url: event_path(event),
-          event_date: event.start_at.strftime("วันที่: %-d/%-m/%y เวลา %H:%M")}
+          event_date: helpers.date_format(event.start_at)}
       )
       marker.json({
         clickable: true,

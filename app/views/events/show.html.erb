@@ -1,7 +1,7 @@
 <h1><%= @event.title %></h1>
 <div class="row">
   <div class="col-lg-12">
-    <p><%= @event.start_at.strftime("วันที่: %-d/%-m/%y เวลา %H:%M") %></p>
+    <p><%= date_format(@event.start_at) %></p>
     <p>แหล่งข้อมูลอ้างอิง: <%= external_link_to truncate_url(@event.source_url), truncate_url(@event.source_url) %></p>
     <div id="event-map"></div>
   </div>
