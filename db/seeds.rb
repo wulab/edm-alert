@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'csv'
+
 def say(message, subitem = false)
   puts "#{subitem ? '   ->' : '--'} #{message}"
 end
@@ -68,5 +71,15 @@ unless Event.any?
         title:       'น้ำท่วมบริเวณ หน้าสถานีรถไฟแบริ่ง'
       }
     ])
+  end
+end
+
+unless Hospital.any?
+  say_with_time "seed(\"hospitals\")" do
+    csv_text = File.read("db/sample_hospital.csv")
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      Hospital.create! row.to_hash
+    end
   end
 end
