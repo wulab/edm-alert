@@ -3,11 +3,6 @@ class EventsController < ApplicationController
     @events = Event.order(start_at: :desc).page(params[:page]).this_weeks
     @event_categories = Event.categories.keys
     @event_provinces = Location.joins(:events).pluck(:province).uniq
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @events }
-    end
   end
 
   def show

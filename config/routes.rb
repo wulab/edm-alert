@@ -9,6 +9,16 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'user/omniauth_callbacks'
   }
 
+  namespace :api do
+    namespace :v1, defaults: { format: :json } do
+      resources :events, only: [:index, :show]
+    end
+  end
+  get "/api/v1/events/category/:category",
+    to: "api/v1/events#category", defaults: { format: :json }
+  get "/api/v1/events/location/:location",
+    to: "api/v1/events#location", defaults: { format: :json }
+
   resources :events , only: [:index, :show]
   get 'pages/about'
   get 'pages/map'
