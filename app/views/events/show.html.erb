@@ -21,23 +21,29 @@
         <%= render partial: "events/default_preparation" %>
       <% end %>
     </div>
-    <div class="col-md-3 warning-emergency-contact">
-      <h3><strong>ขอความช่วยเหลือพื้นที่ใกล้เคียง</h3></strong>
+    <div class="col-md-3 emergency-contact">
+      <h3><strong>ขอความช่วยเหลือ พื้นที่ใกล้เคียง</h3></strong>
       <% if @hospitals_nearby.present? %>
         <% @hospitals_nearby.each do |hospital| %>
           <div class="contact-card">
-            <p>
-              <%= icon('hospital-o') %>
-              <%= external_link_to(hospital.name, "http://www.google.com/search?q=#{hospital.name}") %>
-            </p>
-            <p>
-              <%= icon('phone') %>
+            <div class="card-block">
+              <p class="icon"><%= icon('hospital-o') %></p>
+              <p class="text">
+                <%= external_link_to(hospital.name, "http://www.google.com/search?q=#{hospital.name}") %>
+              </p>
+            </div>
+            <div class="card-block">
+              <p class="icon"><%= icon('phone') %></p>
+              <p class="text">
                 <%= external_link_to(hospital.tel, "tel:#{hospital.tel}") %>
-             </p>
-            <p>
-              <%= icon('map-marker') %>
-              <%= external_link_to(hospital.address, "http://maps.google.com/?q=#{hospital.address}") %>
-            </p>
+              </p>
+            </div>
+            <div class="card-block">
+              <p class="icon"><%= icon('map-marker') %></p>
+              <p class="text">
+                <%= external_link_to(hospital.address, "http://maps.google.com/?q=#{hospital.address}") %>
+              </p>
+            </div>
           </div>
         <% end %>
       <% end %>

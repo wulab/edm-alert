@@ -74,7 +74,7 @@
   height: 300px;
 }
 
-.warning-preparation, .warning-emergency-contact {
+.warning-preparation, .emergency-contact {
   h3 {
     padding-top: 2rem;
     line-height: 1.5;
@@ -95,7 +95,7 @@
   }
 }
 
-.warning-emergency-contact .contact-card {
+.emergency-contact .contact-card {
   padding: 1rem;
   border-bottom: 1px solid #DCDCDC;
   i {
@@ -103,5 +103,12 @@
   }
   a {
     color: #000;
+  }
+  p.icon {
+    width: 22px;
+    float: left;
+  }
+  p.text {
+    padding-left: 22px;
   }
 }
