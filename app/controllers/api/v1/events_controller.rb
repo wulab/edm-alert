@@ -1,6 +1,8 @@
 class Api::V1::EventsController < ApplicationController
   def index
-    @events = Event.order(start_at: :desc).this_weeks.limit(20)
+    @events = Event.order(start_at: :desc).
+                this_weeks.
+                page(params[:page])
     render :index, status: :ok
   end
 
@@ -20,14 +22,18 @@ class Api::V1::EventsController < ApplicationController
       end
 
     @events = Event.where(category: category).
-                order(start_at: :desc).page(params[:page]).this_weeks
+                order(start_at: :desc).
+                this_weeks.
+                page(params[:page])
     render :index, status: :ok
   end
 
   def location
     @events = Event.joins(:location).
                 where(locations: { province: params[:location] }).
-                order(start_at: :desc).page(params[:page]).this_weeks
+                order(start_at: :desc).
+                this_weeks.
+                page(params[:page])
     render :index, status: :ok
   end
 end

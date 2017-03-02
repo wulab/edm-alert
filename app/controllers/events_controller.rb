@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.order(start_at: :desc).page(params[:page]).this_weeks
+    @events = Event.order(start_at: :desc).this_weeks.page(params[:page])
     @event_categories = Event.categories.keys
     @event_provinces = Location.joins(:events).pluck(:province).uniq
   end
@@ -12,7 +12,7 @@ class EventsController < ApplicationController
 
   def category
     @events = Event.where(category: params[:category]).
-                order(start_at: :desc).page(params[:page]).this_weeks
+                order(start_at: :desc).this_weeks.page(params[:page])
     @event_categories = Event.categories.keys - [params[:category]]
     @event_provinces = Location.joins(:events).pluck(:province).uniq
     render :index
@@ -21,7 +21,7 @@ class EventsController < ApplicationController
   def location
     @events = Event.joins(:location).
                 where(locations: { province: params[:location] }).
-                order(start_at: :desc).page(params[:page]).this_weeks
+                order(start_at: :desc).this_weeks.page(params[:page])
     @event_provinces = Location.joins(:events).pluck(:province).uniq
     @event_categories = Event.categories.keys
     render :index
