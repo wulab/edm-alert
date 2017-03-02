@@ -112,3 +112,25 @@
     padding-left: 22px;
   }
 }
+
+.share-buttons {
+  ul {
+  	overflow: auto;
+    padding-left: 0px;
+  }
+  ul li {
+  	list-style-type: none;
+  	float: left;
+  }
+  ul li a i {
+  	background: #205D7A;
+  	color: #fff;
+  	width: 40px;
+  	height: 40px;
+  	border-radius: 20px;
+  	font-size: 25px;
+  	text-align: center;
+  	margin-right: 10px;
+  	padding-top: 15%;
+  }
+}
