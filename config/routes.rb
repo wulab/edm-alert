@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     to: "api/v1/events#category", defaults: { format: :json }
   get "/api/v1/events/location/:location",
     to: "api/v1/events#location", defaults: { format: :json }
+  get "/api/v1/events/postalcode/:postalcode",
+    to: "api/v1/events#postalcode", defaults: { format: :json }
 
   resources :events , only: [:index, :show]
   get 'pages/about'

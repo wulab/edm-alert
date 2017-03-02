@@ -36,4 +36,13 @@ class Api::V1::EventsController < ApplicationController
                 page(params[:page])
     render :index, status: :ok
   end
+
+  def postalcode
+    @events = Event.joins(:location).
+                where(locations: { postal_code: params[:postalcode] }).
+                order(start_at: :desc).
+                this_weeks.
+                page(params[:page])
+    render :index, status: :ok
+  end
 end
