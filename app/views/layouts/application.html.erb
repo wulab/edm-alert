@@ -22,7 +22,7 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <div id="main">
+    <div id="main" class="<%= "#{params[:controller].parameterize}-#{params[:action]}" %>">
       <div class="container">
         <%= render "layouts/alert" %>
         <%= yield %>

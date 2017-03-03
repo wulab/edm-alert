@@ -6,12 +6,13 @@
 #main { padding-top: 70px; }
 
 .card {
+  border-top: 6px solid #337ab7;
   position: relative;
   margin-bottom: 24px;
-  border: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
   border-radius: 2px;
   .card-block {
-    background: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.8);
     padding: 15px;
   }
 }
@@ -138,5 +139,22 @@
   }
   ul li a i:hover {
   	opacity: 0.7;
+  }
+}
+
+.welcome-card .card-block {
+  text-align: center;
+}
+
+.pages-about {
+  background-image: image-url("moutains_bg.jpg");
+  .card .card-block {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .card-title {
+    text-align: center;
+  }
+  .section-1 {
+    padding-bottom: 2rem;
   }
 }
