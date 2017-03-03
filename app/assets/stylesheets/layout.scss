@@ -144,12 +144,18 @@
 
 .welcome-card .card-block {
   text-align: center;
+  .links {
+    padding-top: 2rem;
+    text-align: center;
+  }
 }
 
 .pages-about,
 .user-registrations-new,
-.devise-sessions-new {
+.devise-sessions-new,
+.pages-howitwork {
   background-image: image-url("moutains_bg.jpg");
+  background-repeat-y: no-repeat;
   .card .card-block {
     background: rgba(255, 255, 255, 0.5);
   }
@@ -164,4 +170,21 @@
 
 .pages-about .section-1 {
   padding-bottom: 2rem;
+}
+
+#how-it-work {
+  .title {
+    text-align: center;
+    padding-top: 3rem;
+  }
+  .explain-icon {
+    text-align: center;
+    i.fa {
+      font-size: 150px;
+      padding: 5rem;
+    }
+  }
+  .section {
+    padding: 5rem 0;
+  }
 }

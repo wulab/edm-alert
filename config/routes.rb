@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :events , only: [:index, :show]
   get 'pages/about'
   get 'pages/map'
+  get 'pages/howitwork'
   get 'pages/map_with_location/:location', to: 'pages#map_with_location'
   get 'pages/map_with_category/:category', to: 'pages#map_with_category'
   get '/events/category/:category', to: 'events#category'
