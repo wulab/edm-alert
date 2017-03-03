@@ -1,17 +1,26 @@
 <% provide :title, "เข้าสู่ระบบ" %>
 
-<h2>เข้าสู่ระบบ</h2>
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="card registration">
+      <div class="card-block">
+        <h2 class="card-title">เข้าสู่ระบบ</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, label: 'อีเมล์', required: false, autofocus: true %>
-    <%= f.input :password, label: 'พาสเวิร์ด', required: false %>
-    <%= f.input :remember_me, label: 'จำพาสเวิร์ด', as: :boolean if devise_mapping.rememberable? %>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, label: 'อีเมล์', required: false, autofocus: true %>
+            <%= f.input :password, label: 'พาสเวิร์ด', required: false %>
+            <%= f.input :remember_me, label: 'จำพาสเวิร์ด', as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "เข้าสู่ระบบ" %>
+          </div>
+        <% end %>
+        <div class="links">
+          <%= link_to "ลืมพาสเวิร์ด?", new_password_path(resource_name) %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
