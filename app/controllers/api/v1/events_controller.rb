@@ -1,4 +1,6 @@
 class Api::V1::EventsController < ApplicationController
+  before_action :set_headers
+
   def index
     @events = Event.order(start_at: :desc).
                 this_weeks.
@@ -44,5 +46,14 @@ class Api::V1::EventsController < ApplicationController
                 this_weeks.
                 page(params[:page])
     render :index, status: :ok
+  end
+
+  private
+  
+  def set_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'GET'
+    headers['Access-Control-Request-Method'] = '*'
+    headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
   end
 end
