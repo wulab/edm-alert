@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
     <%= content_for :meta %>
 
-    <title><%= content_for?(:title) ? [ yield(:title),  ' | EDM Alert'].join(' ') : 'EDM Alert' %></title>
+    <title><%= content_for?(:title) ? [ yield(:title),  ' | SafetyAlert ME'].join(' ') : 'SafetyAlert ME' %></title>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -24,10 +24,8 @@
       <%= render 'layouts/navigation' %>
     </header>
     <div id="main" class="<%= "#{params[:controller].parameterize}-#{params[:action]}" %>">
-      <div class="container">
-        <%= render "layouts/alert" %>
-        <%= yield %>
-      </div>
+      <%= render "layouts/alert" %>
+      <%= yield %>
     </div>
 
   </body>

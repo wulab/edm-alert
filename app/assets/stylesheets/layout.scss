@@ -3,22 +3,18 @@
  * https://smacss.com/book/type-layout
  */
 
-#main { padding-top: 70px; }
+#main { padding-top: 60px; }
 
 .card {
-  border-top: 6px solid #337ab7;
+  border-top: 6px solid #5f84e9;
   position: relative;
   margin-bottom: 24px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #5f84e9;
   border-radius: 2px;
   .card-block {
     background: rgba(255,255,255,0.8);
     padding: 15px;
   }
-}
-.navbar-inverse {
-  background-color: rgba(0,0,0,0.8);
-  border-color: #111;
 }
 
 .google-map-container {
@@ -155,12 +151,19 @@
 .devise-sessions-new,
 .pages-howitwork,
 .devise-passwords-new {
-  background-image: image-url("moutains_bg.jpg");
-  background-repeat-y: no-repeat;
+  background-image: image-url("light_wave_bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom -.125rem center;
+  min-height: 100vh;
+  .card {
+    margin-top: 2rem;
+  }
   .card .card-block {
     background: rgba(255, 255, 255, 0.5);
   }
   .card-title {
+    font-family: 'Kanit', sans-serif;
     text-align: center;
   }
   .links {
@@ -187,5 +190,188 @@
   }
   .section {
     padding: 5rem 0;
+  }
+}
+
+#top-nav {
+  font-family: 'Kanit', sans-serif;
+  background-color: rgb(95, 132, 233);
+  border: none;
+  min-height: 60px;
+  padding: 8px 16px;
+}
+
+a.navbar-brand {
+  font-family: 'Montserrat','Helvetica Neue',Arial,sans-serif;
+  color: #FFF;
+  line-height: 1.90em;
+  float: left;
+  font-size: 20px;
+  padding-top: 5px;
+  margin-right: 1rem;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+
+.navbar {
+  .navbar-nav>li>a {
+    color: #000;
+    font-size: 16px;
+    &:hover, &:focus:hover {
+      color: #FFF;
+      background-color: transparent;
+    }
+  }
+}
+
+#header {
+  position: relative;
+  min-height: auto;
+  text-align: center;
+  color: #FFF;
+  width: 100%;
+  background-image: image-url("wave_bg.svg");
+  background-color: #5f84e9;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 100%;
+
+  .header-content {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    padding: 6rem 0 7.5rem;
+
+    h1 {
+      text-shadow: 0px 4px 0px #4B6FD2;
+    }
+
+    .inner {
+      height: 100%;
+    }
+
+    .image-inner img {
+      padding: 2rem;
+      width: 100%;
+    }
+
+    .header-detail {
+      font-family: 'Kanit', sans-serif;
+      padding: 1rem 0;
+      line-height: 3rem;
+    }
+  }
+}
+
+.section {
+  padding: 100px 1rem;
+
+  h2, h3 {
+    padding-bottom: 1rem;
+  }
+}
+
+#credibility {
+  .awards .award {
+    display: inline-block;
+    margin: 0 41px;
+
+    .award-organisation {
+      margin: 1rem 0;
+
+      img {
+        height: 60px;
+        width: auto;
+      }
+    }
+
+    .award-logo {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-size: 100px 72px;
+    }
+  }
+}
+
+.btn-primary-outline {
+  border-color: #FFF;
+  background-color: #FFF;
+  color: #5f84e9;
+
+  &:hover {
+    background-color:#5f84e9;
+    color:#FFF;
+  }
+}
+
+.btn-xl {
+  padding: 15px 30px;
+  font-size: 20px;
+}
+
+.thai-headline {
+  font-family: 'Kanit', sans-serif;
+}
+
+.bg-primary {
+  background-color: #007FFF;
+}
+
+.bg-alt {
+  background-color: #fff;
+}
+
+#trustworthy .content {
+  line-height: 4rem;
+}
+
+footer {
+  font-family: 'Montserrat','Helvetica Neue',Arial,sans-serif;
+  background-color: rgb(224, 224, 227);
+  padding: 40px 45px 45px;
+}
+
+#random-slogan {
+  opacity: 0.9;
+}
+
+#howitwork {
+  .feature img {
+    height: 120px;
+    width: auto;
+  }
+}
+
+#main.pages-map {
+  padding-top: 80px;
+}
+
+.bg-grey {
+  background-color: #f7f7f7;
+}
+
+@media (min-width: 48em) {
+  #header .header-content .text-inner {
+    margin-top: 40%;
+    padding: 1rem;
+  }
+
+  .copyright {
+    text-align: right;
+  }
+}
+
+@media(max-width:48em) {
+  #header .header-content .text-inner {
+    margin-top: 10%;
+    padding: 1rem;
+  }
+
+  .copyright {
+    text-align: center;
   }
 }

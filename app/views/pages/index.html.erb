@@ -1,37 +1,106 @@
 <% provide :title, "หน้าหลัก" %>
 
-<div id="map_container" class="google-map-container star-map-container">
-  <div id="map_canvas" class="google-map canvas-map"></div>
-  <div class="star-map-overflow">
-    <div id="star_canvas" class="star-map canvas-stars"></div>
+<div id="header">
+  <div class="header-content">
+    <div class="row">
+      <div class="col-md-6 col-12 text-center inner">
+        <div class="inner image-inner">
+          <%= image_tag("header_image.png") %>
+  			</div>
+      </div>
+      <div class="col-md-6 col-12 text-center inner">
+        <div class="inner text-inner">
+          <h1>SafetyAlert { <span class="thai-headline" id="random-slogan">ME</span> }</h1>
+          <h4 class="header-detail">ข้อมูลเรียลไทม์ จากหน่วยงานรัฐบาล <br /> แจ้งเตือนให้พร้อมรับมือ { ภัยพิบัติ }</h4>
+          <%= link_to "เริ่มใช้เลย ฟรี", new_user_registration_path, class: "btn btn-primary-outline btn-xl thai-headline" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-      <div class="scroll-pane welcome-card">
-        <div class="card">
-          <div class="card-block">
-            <h1 class="h1 card-title">EDM Alert</h4>
-            <% if not user_signed_in? %>
-              <p class="p lead">ข้อมูลเรียลไทม์ จากหน่วยงานรัฐบาล แจ้งเตือนคุณให้เตรียมพร้อมรับมือ และปลอดภัยจากภัยพิบัติ</p>
-            <% end %>
+<section id="howitwork" class="bg-alt section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="text-primary thai-headline">ขั้นตอนทำงาน</h2>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 text-center">
+          <div class="feature">
+            <%= image_tag("finding.png") %>
+            <h3 class="text-uppercase thai-headline">ค้นหา & จัดเก็บ</h3>
+            <p>รวบรวมข้อมูลเตือนภัยพิบัติ จากเว็บไซต์ภาครัฐที่เชื่อถือได้ ดังนี้ <%= external_link_to "กรมอุตุนิยมวิทยาและแผ่นดินไหว","http://data.tmd.go.th/api/index1.php" %> , <%= external_link_to "สำนักการระบายน้ำ","http://203.155.220.119/DDS_Flooding" %> , <%= external_link_to "คลังข้อมูลน้ำ และภูมิอากาศแห่งชาติ","http://www.thaiwater.net" %> และแหล่งข้อมูลอื่นๆ ในอนาคต</p>
           </div>
-          <div class="card-block">
-            <% if user_signed_in? %>
-                <p class="p lead">สวัสดี คุณ, <%= current_user.full_name %></p>
-                <p class="p lead">คุณอยู่ในพื้นที่ <%= current_user.location.district %>, <%= current_user.location.province %>
-                <br/>รหัสไปรษณีย์ <%= current_user.location.postal_code %></p>
-                <p class="p lead">เมื่อพื้นที่ของคุณอยู่ในจุดเสี่ยงภัย เราจะแจ้งข้อมูลเตือนภัยให้คุณทราบทันที</p>
-            <% else %>
-              <%= link_to "สมัคร", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-              <%= link_to "เข้าสู่ระบบ", new_user_session_path, class: "btn btn-lg btn-default" %>
-              <div class="links lead">
-                <%= link_to "เราทำงานอย่างไร?", pages_howitwork_path %>
-              </div>
-            <% end %>
+        </div>
+        <div class="col-lg-4 col-md-4 text-center">
+          <div class="feature">
+            <%= image_tag("sorted.png") %>
+            <h3 class="text-uppercase thai-headline">รวมกลุ่ม</h3>
+            <p>รวมกลุ่มข้อมูลให้เป็นมาตรฐาน ให้ผู้รับข่าวเข้าใจง่าย รวมถึงเปิดข้อมูล <%= external_link_to "SafetyAlert ME API", "http://docs.edmalert.apiary.io" %>  ให้กับนักพัฒนาภายนอกนำไปต่อยอด</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 text-center">
+          <div class="feature">
+            <%= image_tag("alert.png") %>
+            <h3 class="text-uppercase thai-headline">แจ้งเตือนทันที</h3>
+            <p>ส่งข้อมูลเตือนภัยในพื้นที่ของผู้ใช้ พร้อมแนะนำการหลีกเลี่ยงจุดเสี่ยงภัย ทันทีที่ภาครัฐแจ้งเตือน</p>
           </div>
         </div>
       </div>
+    </div>
+</section>
+
+<section id="trustworthy" class="section bg-grey">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="thai-headline">ข้อมูลคุณปลอดภัย มั่นใจได้</h2>
+        <p class="lead content">
+          SafetyAlert ME ถูกพัฒนาในโครงการ <%= external_link_to "Social Tech", "http://socialtech.or.th/" %>  ซึ่งเป็น Thai Government Partner <br />
+          อย่างเป็นทางการ ทำให้ข้อมูลสามารถเชื่อถือได้
+        </p>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<aside class="bg-alt">
+  <div class="container text-center">
+    <section id="credibility" class="section">
+      <div class="row">
+        <div class="col-md-12 col-12">
+          <h2>As Seen On</h2>
+          <div class="awards">
+            <div class="award">
+              <div class="award-inner">
+                <div class="award-title">EDM Hackathon</div>
+                <div class="award-organisation">
+                  <%= link_to "https://data.go.th/AnnouncementDetails.aspx?id=45", target: "_blank" do %>
+                    <%= image_tag("data_gov.png") %>
+                  <% end %>
+                </div>
+                <div class="award-subtitle">Winner, 2016</div>
+              </div>
+            </div>
+            <div class="award">
+              <div class="award-inner">
+                <div class="award-title">International Open Data Day</div>
+                <div class="award-organisation">
+                  <%= link_to "https://www.facebook.com/opendatathailand/", target: "_blank" do %>
+                    <%= image_tag("opendata.jpg") %>
+                  <% end %>
+                </div>
+                <div class="award-subtitle">Exhibitor & Speaker, 2017</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</aside>
+
+<%= render 'layouts/footer' %>
