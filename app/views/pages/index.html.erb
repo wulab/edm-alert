@@ -10,9 +10,24 @@
       </div>
       <div class="col-md-6 col-12 text-center inner">
         <div class="inner text-inner">
-          <h1>SafetyAlert { <span class="thai-headline" id="random-slogan">ME</span> }</h1>
-          <h4 class="header-detail">ข้อมูลเรียลไทม์ จากหน่วยงานรัฐบาล <br /> แจ้งเตือนให้พร้อมรับมือ { ภัยพิบัติ }</h4>
-          <%= link_to "เริ่มใช้เลย ฟรี", new_user_registration_path, class: "btn btn-primary-outline btn-xl thai-headline" %>
+          <% if not user_signed_in? %>
+            <h1>SafetyAlert { <span class="thai-headline" id="random-slogan">ME</span> } </h1>
+            <h4 class="header-detail">
+              ข้อมูลเรียลไทม์ จากหน่วยงานรัฐบาล <br /> แจ้งเตือนให้พร้อมรับมือ { ภัยพิบัติ }
+            </h4>
+            <%= link_to "เริ่มใช้เลย ฟรี", new_user_registration_path, class: "btn btn-primary-outline btn-xl thai-headline" %>
+          <% else %>
+            <h1>SafetyAlert { <span class="thai-headline">ME</span> }</h1>
+            <h4 class="header-detail">
+              <p class="p lead">สวัสดีคุณ <%= current_user.full_name %></p>
+              <p class="p lead">คุณอยู่ในพื้นที่ <%= current_user.location.district %>, <%= current_user.location.province %>
+              <br/>รหัสไปรษณีย์ <%= current_user.location.postal_code %></p>
+              <p class="p lead">เมื่อพื้นที่ของคุณอยู่ในจุดเสี่ยงภัย <br /> เราจะแจ้งข้อมูลเตือนภัยให้คุณทราบทันที</p>
+            </h4>
+
+            <!-- TODO: check disaster status in user's postal code -->
+
+          <% end %>
         </div>
       </div>
     </div>
