@@ -9,14 +9,16 @@
   			</div>
       </div>
       <div class="col-md-6 col-12 text-center inner">
-        <div class="inner text-inner">
-          <% if not user_signed_in? %>
+        <% if not user_signed_in? %>
+          <div class="inner guest-content">
             <h1>SafetyAlert { <span class="thai-headline" id="random-slogan">ME</span> } </h1>
             <h4 class="header-detail">
               ข้อมูลเรียลไทม์ จากหน่วยงานรัฐบาล <br /> แจ้งเตือนให้พร้อมรับมือ { ภัยพิบัติ }
             </h4>
             <%= link_to "เริ่มใช้เลย ฟรี", new_user_registration_path, class: "btn btn-primary-outline btn-xl thai-headline" %>
-          <% else %>
+          </div>
+        <% else %>
+          <div class="inner member-content">
             <h1>SafetyAlert { <span class="thai-headline">ME</span> }</h1>
             <h4 class="header-detail">
               <p class="p lead">สวัสดีคุณ <%= current_user.full_name %></p>
@@ -26,9 +28,8 @@
             </h4>
 
             <!-- TODO: check disaster status in user's postal code -->
-
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
