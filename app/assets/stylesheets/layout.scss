@@ -385,6 +385,10 @@ footer {
   .copyright {
     text-align: right;
   }
+
+  .share-buttons ul {
+    float: right;
+  }
 }
 
 @media(max-width:48em) {
@@ -397,5 +401,9 @@ footer {
 
   .copyright {
     text-align: center;
+  }
+
+  .share-buttons ul {
+    float: none;
   }
 }

@@ -1,80 +1,82 @@
 <% provide :title, @event.title %>
 
-<h1><%= @event.title %></h1>
-<div class="row">
-  <div class="col-lg-12">
-    <div class="row">
-      <div class="col-md-9">
-        <p><%= date_format(@event.start_at) %></p>
-        <p>แหล่งข้อมูลอ้างอิง: <%= external_link_to truncate_url(@event.source_url), truncate_url(@event.source_url) %></p>
-      </div>
-      <div class="col-md-3 share-buttons">
-        <ul>
-          <li>
-            <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: "_blank", title: "Share on Facebook" do %>
-              <%= icon('facebook') %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "https://twitter.com/share?url=#{request.original_url}&text=#{@event.title}&via=EDMAlert.me", target: "_blank", title: "Share on Twitter" do %>
-              <%= icon('twitter') %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "https://plus.google.com/share?url=#{request.original_url}", target: "_blank", title: "Share on Google Plus" do %>
-              <%= icon('google-plus') %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "mailto:?subject=#{@event.title}&body=#{request.original_url}", target: "_blank", title: "Share via Email" do %>
-              <%= icon('envelope-o') %>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div id="event-map"></div>
-  </div>
-</div>
-
 <div class="container">
+  <h1><%= @event.title %></h1>
   <div class="row">
-    <div class="col-md-9 warning-preparation">
-      <h3><strong>เตรียมตัวรับมือภัยพิบัติเบื้องต้น</strong></h3>
-      <% if @event.category == "flood" || @event.category == "rainfall" %>
-        <%= render partial: "events/flood_preparation" %>
-      <% elsif @event.category == "earthquake" %>
-        <%= render partial: "events/earthquake_preparation" %>
-      <% else %>
-        <%= render partial: "events/default_preparation" %>
-      <% end %>
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-md-9">
+          <p><%= date_format(@event.start_at) %></p>
+          <p>แหล่งข้อมูลอ้างอิง: <%= external_link_to truncate_url(@event.source_url), truncate_url(@event.source_url) %></p>
+        </div>
+        <div class="col-md-3 share-buttons">
+          <ul>
+            <li>
+              <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", target: "_blank", title: "Share on Facebook" do %>
+                <%= icon('facebook') %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "https://twitter.com/share?url=#{request.original_url}&text=#{@event.title}&via=EDMAlert.me", target: "_blank", title: "Share on Twitter" do %>
+                <%= icon('twitter') %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "https://plus.google.com/share?url=#{request.original_url}", target: "_blank", title: "Share on Google Plus" do %>
+                <%= icon('google-plus') %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "mailto:?subject=#{@event.title}&body=#{request.original_url}", target: "_blank", title: "Share via Email" do %>
+                <%= icon('envelope-o') %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="event-map"></div>
     </div>
-    <div class="col-md-3 emergency-contact">
-      <h3><strong>ขอความช่วยเหลือ พื้นที่ใกล้เคียง</h3></strong>
-      <% if @hospitals_nearby.present? %>
-        <% @hospitals_nearby.each do |hospital| %>
-          <div class="contact-card">
-            <div class="card-block">
-              <p class="icon"><%= icon('hospital-o') %></p>
-              <p class="text">
-                <%= external_link_to(hospital.name, "http://www.google.com/search?q=#{hospital.name}") %>
-              </p>
-            </div>
-            <div class="card-block">
-              <p class="icon"><%= icon('phone') %></p>
-              <p class="text">
-                <%= external_link_to(hospital.tel, "tel:#{hospital.tel}") %>
-              </p>
-            </div>
-            <div class="card-block">
-              <p class="icon"><%= icon('map-marker') %></p>
-              <p class="text">
-                <%= external_link_to(hospital.address, "http://maps.google.com/?q=#{hospital.address}") %>
-              </p>
-            </div>
-          </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 warning-preparation">
+        <h3><strong>เตรียมตัวรับมือภัยพิบัติเบื้องต้น</strong></h3>
+        <% if @event.category == "flood" || @event.category == "rainfall" %>
+          <%= render partial: "events/flood_preparation" %>
+        <% elsif @event.category == "earthquake" %>
+          <%= render partial: "events/earthquake_preparation" %>
+        <% else %>
+          <%= render partial: "events/default_preparation" %>
         <% end %>
-      <% end %>
+      </div>
+      <div class="col-md-3 emergency-contact">
+        <h3><strong>ขอความช่วยเหลือ พื้นที่ใกล้เคียง</h3></strong>
+        <% if @hospitals_nearby.present? %>
+          <% @hospitals_nearby.each do |hospital| %>
+            <div class="contact-card">
+              <div class="card-block">
+                <p class="icon"><%= icon('hospital-o') %></p>
+                <p class="text">
+                  <%= external_link_to(hospital.name, "http://www.google.com/search?q=#{hospital.name}") %>
+                </p>
+              </div>
+              <div class="card-block">
+                <p class="icon"><%= icon('phone') %></p>
+                <p class="text">
+                  <%= external_link_to(hospital.tel, "tel:#{hospital.tel}") %>
+                </p>
+              </div>
+              <div class="card-block">
+                <p class="icon"><%= icon('map-marker') %></p>
+                <p class="text">
+                  <%= external_link_to(hospital.address, "http://maps.google.com/?q=#{hospital.address}") %>
+                </p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
