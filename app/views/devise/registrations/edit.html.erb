@@ -1,31 +1,38 @@
 <% provide :title, "แก้ไขโปรไฟล์" %>
 
-<h2>แก้ไขโปรไฟล์</h2>
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="card registration">
+      <div class="card-block">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+        <h2 class="card-title">แก้ไขโปรไฟล์</h2>
 
-  <div class="form-inputs">
-    <%= f.input :full_name, required: true, label: 'ชื่อ-นามสกุล', autofocus: true  %>
-    <%= f.input :email, required: true, label: 'อีเมล์' %>
-    <%= f.input :postal_code, required: true, label: 'รหัสไปรษณีย์' %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.error_notification %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+          <div class="form-inputs">
+            <%= f.input :full_name, required: true, label: 'ชื่อ-นามสกุล', autofocus: true  %>
+            <%= f.input :email, required: true, label: 'อีเมล์' %>
+            <%= f.input :postal_code, required: true, label: 'รหัสไปรษณีย์' %>
 
-    <%= f.input :password, autocomplete: "off", label: 'พาสเวิร์ด', hint: "เว้นว่างไว้หากไม่ต้องการเปลี่ยน", required: false %>
-    <%= f.input :password_confirmation, label: 'ยืนยันพาสเวิร์ด', required: false %>
-    <%= f.input :current_password, label: 'พาสเวิร์ดปัจจุบัน', hint: "ใส่พาสเวิร์ดเพื่อแก้ไขโปรไฟล์", required: true %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+            <% end %>
+
+            <%= f.input :password, autocomplete: "off", label: 'พาสเวิร์ด', hint: "เว้นว่างไว้หากไม่ต้องการเปลี่ยน", required: false %>
+            <%= f.input :password_confirmation, label: 'ยืนยันพาสเวิร์ด', required: false %>
+            <%= f.input :current_password, label: 'พาสเวิร์ดปัจจุบัน', hint: "ใส่พาสเวิร์ดเพื่อแก้ไขโปรไฟล์", required: true %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "ปรับปรุง" %>
+          </div>
+        <% end %>
+        <div class="links">
+          <p>ต้องการยกเลิกแอคเคาท์? <%= link_to "ลบแอคเคาท์", registration_path(resource_name), data: { confirm: "ยืนยันการลบแอคเคาท์" }, method: :delete %></p>
+          <%= link_to "กลับไป", :back %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "ปรับปรุง" %>
-  </div>
-<% end %>
-
-<h3>ยกเลิก</h3>
-
-<p>ต้องการยกเลิกแอคเคาท์? <%= link_to "ลบแอคเคาท์", registration_path(resource_name), data: { confirm: "ยืนยันการลบแอคเคาท์" }, method: :delete %></p>
-
-<%= link_to "กลับไป", :back %>
+</div>
