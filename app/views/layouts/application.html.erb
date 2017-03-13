@@ -26,8 +26,11 @@
     <div id="main" class="<%= "#{params[:controller].parameterize}-#{params[:action]}" %>">
       <%= render "layouts/alert" %>
       <%= yield %>
-    </div>
 
+      <% unless current_page?(pages_map_path) %>
+        <%= render 'layouts/footer' %>
+      <% end %>
+    </div>
   </body>
 
   <script type="text/javascript">
