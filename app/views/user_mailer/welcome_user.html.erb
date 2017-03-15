@@ -1,0 +1,36 @@
+<!--[if (gte mso 9)|(IE)]>
+<table width="600" align="center">
+<tr>
+<td>
+<![endif]-->
+
+<table class="outer" align="center">
+  <tr>
+    <td class="inner contents" align="center">
+      <img src="https://cloud.githubusercontent.com/assets/403010/23940390/478cf5ca-0997-11e7-8c16-ea117d3ee60c.png" height="200" alt="">
+      <p>
+        สวัสดีคุณ <%= @user.full_name %>
+      </p>
+      <br />
+      <p>
+        คุณทำการสมัครรับข่าวเตือนภัยเรียบร้อย
+      </p>
+      <p>
+        ระบบจะส่งข้อความเตือนทันที เมื่อพื้นที่ <%= @user.location.province %> เกิดภัยพิบัติ
+      </p>
+      <br />
+      <p>
+        หากต้องการแก้ไขข้อมูลของคุณ <%= link_to "คลิกที่นี่", "http://www.safetyalert.me/users/edit" %>
+      </p>
+      <p>
+        ขอบคุณสำหรับการรับข่าวสารจาก <%= link_to "SafetyAlert", "www.safetyalert.me" %>
+      </p>
+    </td>
+	</tr>
+</table>
+
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->

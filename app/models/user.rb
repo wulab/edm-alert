@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   validates :uid, uniqueness: { scope: :provider }, allow_nil: true
 
+  # Callbacks
+  after_create :welcome_user
+
   # Find or create resource with auth hash returned from omniauth provider.
   def self.find_or_create_with_omniauth(auth)
     find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |user|
@@ -40,5 +43,11 @@ class User < ApplicationRecord
 
   def postal_code=(value)
     self.location = Location.find_by(postal_code: value)
+  end
+
+  private
+
+  def welcome_user
+    UserMailer.welcome_user(self).deliver_now
   end
 end
