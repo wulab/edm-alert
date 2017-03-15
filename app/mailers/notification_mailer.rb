@@ -8,6 +8,7 @@ class NotificationMailer < ApplicationMailer
   def event_warning(user, event)
     @user  = user
     @event = event
-    mail to: @user.email, subject: @event.title
+    @hospital = Hospital.where(postal_code: event.location.postal_code).first
+    mail to: @user.email, subject: "#{@event.title} - SafetyAlert"
   end
 end

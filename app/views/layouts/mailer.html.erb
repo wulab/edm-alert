@@ -29,6 +29,9 @@
 		div[style*="margin: 16px 0"] {
 			margin:0 !important;
 		}
+		ul {
+			padding-left: 20px;
+		}
 		.wrapper {
 			width: 100%;
 			table-layout: fixed;
@@ -40,7 +43,7 @@
 			margin: 0 auto;
 		}
 		.outer {
-			Margin: 0 auto;
+			margin: 0 auto;
 			width: 100%;
 			max-width: 600px;
 		}
@@ -51,7 +54,7 @@
 			width: 100%;
 		}
 		p {
-			Margin: 0;
+			margin: 0;
 		}
 		a {
 			color: #ee6a56;
@@ -97,9 +100,7 @@
 			text-align: left;
 		}
 		.two-column img {
-			width: 100%;
 			max-width: 280px;
-			height: auto;
 		}
 		.two-column .text {
 			padding-top: 10px;
@@ -155,6 +156,9 @@
 		.left-sidebar a {
 			color: #85ab70;
 		}
+		.left-sidebar ul {
+			padding-left: 10px;
+		}
 
 		/* Right sidebar layout */
 		.right-sidebar {
@@ -182,6 +186,12 @@
 		.right-sidebar a {
 			color: #70bbd9;
 		}
+		.text-center {
+			text-align: center;
+		}
+		.logo, .footer-contact, .title {
+			padding: 1rem 0;
+		}
 
 		/*Media Queries*/
 		@media screen and (max-width: 400px) {
@@ -195,6 +205,12 @@
 			.three-column img {
 				max-width: 50% !important;
 			}
+			.left-sidebar {
+				text-align: center;
+			}
+			.left-sidebar ul {
+				list-style-type: none;
+			}
 		}
 
 		@media screen and (min-width: 401px) and (max-width: 620px) {
@@ -203,6 +219,12 @@
 			}
 			.two-column .column {
 				max-width: 50% !important;
+			}
+			.left-sidebar {
+				text-align: center;
+			}
+			.left-sidebar ul {
+				list-style-type: none;
 			}
 		}
 	</style>
@@ -215,242 +237,18 @@
 <body>
 	<center class="wrapper">
 		<div class="webkit">
-			<!--[if (gte mso 9)|(IE)]>
-			<table width="600" align="center">
-			<tr>
-			<td>
-			<![endif]-->
 			<br />
-			<table class="outer" align="center">
-					<img src="https://cloud.githubusercontent.com/assets/403010/23893225/4b3e236e-08d0-11e7-8f7b-904894c41531.png" width="60" alt="" />
-					<tr>
-						<td class="inner contents" align="center">
-							<p class="h2">ฝนตกหนักที่ บ้านพระรัก</p>
-							<p>จังหวัด เชียงราย</p>
-							<p>ละติจูด: 9.86537 ลองจิจูด: 98.844899</p>
-						</td>
-					</tr>
-				<tr>
-					<td class="full-width-image">
-						<img src="http://placehold.it/600x200" width="600" alt="" />
-					</td>
-				</tr>
-				<tr>
-					<td class="one-column">
-						<table width="100%">
-							<tr>
-								<td class="inner" align="center">
-									<p>
-										รายงานจาก สถาบันสารสนเทศทรัพยากรน้ําและการเกษตร พบเหตุ ฝนตกหนัก เกิดขึ้นเมื่อ 01/03/2017 16:00:00 ตามเวลาในประเทศไทย
-									</p>
-									<p><a href="#">ตรวจสอบแหล่งข้อมูล</a></p>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td class="two-column">
-						<!--[if (gte mso 9)|(IE)]>
-						<table width="100%">
-						<tr>
-						<td width="50%" valign="top">
-						<![endif]-->
-						<div class="column">
-							<table width="100%">
-								<tr>
-									<td class="inner">
-										<table class="contents">
-											<tr>
-												<td>
-													<img src="http://placehold.it/280x150" width="280" alt="" />
-												</td>
-											</tr>
-											<tr>
-												<td class="text">
-													<p class="h2">โรงพยาบาลใกล้เคียง</p>
-													Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<!--[if (gte mso 9)|(IE)]>
-						</td><td width="50%" valign="top">
-						<![endif]-->
-						<div class="column">
-							<table width="100%">
-								<tr>
-									<td class="inner">
-										<table class="contents">
-											<tr>
-												<td>
-													<img src="http://placehold.it/280x150" width="280" alt="" />
-												</td>
-											</tr>
-											<tr>
-												<td class="text">
-													<p class="h2">ขอความช่วยเหลือใกล้เคียง</p>
-													Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas sed ante pellentesque, posuere leo id, eleifend dolor.
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<!--[if (gte mso 9)|(IE)]>
-						</td>
-						</tr>
-						</table>
-						<![endif]-->
-					</td>
-				</tr>
-				<tr>
-					<td align="center">
-						<p class="h2">การเตรียมพร้อม</p>
-					</td>
-				</tr>
-				<tr>
-					<td class="left-sidebar">
-						<!--[if (gte mso 9)|(IE)]>
-						<table width="100%">
-						<tr>
-						<td width="100">
-						<![endif]-->
-						<div class="column left">
-							<table width="100%">
-								<tr>
-									<td class="inner">
-										<img src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/map-o.png" width="48" alt="" />
-									</td>
-								</tr>
-							</table>
-						</div>
-						<!--[if (gte mso 9)|(IE)]>
-						</td><td width="500">
-						<![endif]-->
-						<div class="column right">
-							<table width="100%">
-								<tr>
-									<td class="inner contents">
-										<p class="h2">ก่อนน้ำท่วม</p>
-										<ul>
-											<li>สมัครและรอรับรับข่าวเตือนภัยจากเรา</li>
-											<li>ดูข้อมูลน้ำท่วมในเขตของคุณ ที่นี่</li>
-											<li>ปิดน้ำ, ไฟฟ้า และ แก๊ส ภายในบ้าน</li>
-										</ul>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<!--[if (gte mso 9)|(IE)]>
-						</td>
-						</tr>
-						</table>
-						<![endif]-->
-					</td>
-				</tr>
-				<tr>
-					<td class="left-sidebar">
-						<!--[if (gte mso 9)|(IE)]>
-						<table width="100%">
-						<tr>
-						<td width="100">
-						<![endif]-->
-						<div class="column left">
-							<table width="100%">
-								<tr>
-									<td class="inner">
-										<img src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/map-o.png" width="48" alt="" />
-									</td>
-								</tr>
-							</table>
-						</div>
-						<!--[if (gte mso 9)|(IE)]>
-						</td><td width="500">
-						<![endif]-->
-						<div class="column right">
-							<table width="100%">
-								<tr>
-									<td class="inner contents">
-										<p class="h2">ขณะน้ำท่วม</p>
-										<ul>
-											<li>โทรขอความช่วยเหลือไปยัง 1111 กด 5</li>
-											<li>ดหลีกเลี่ยงการเดินทางในจุดน้ำท่วม</li>
-											<li>ให้ความช่วยเหลือ หรือขอความช่วยเหลือจากเพื่อนบ้าน</li>
-										</ul>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<!--[if (gte mso 9)|(IE)]>
-						</td>
-						</tr>
-						</table>
-						<![endif]-->
-					</td>
-				</tr>
-				<tr>
-					<td class="left-sidebar">
-						<!--[if (gte mso 9)|(IE)]>
-						<table width="100%">
-						<tr>
-						<td width="100">
-						<![endif]-->
-						<div class="column left">
-							<table width="100%">
-								<tr>
-									<td class="inner">
-										<img src="https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/48/map-o.png" width="48" alt="" />
-									</td>
-								</tr>
-							</table>
-						</div>
-						<!--[if (gte mso 9)|(IE)]>
-						</td><td width="500">
-						<![endif]-->
-						<div class="column right">
-							<table width="100%">
-								<tr>
-									<td class="inner contents">
-										<p class="h2">หลังน้ำท่วม</p>
-										<ul>
-											<li>เลี่ยงการใช้แก๊ส, ไฟฟ้า ก่อนตรวจสอบจากช่าง</li>
-											<li>เลี่ยงอาหารที่สัมผัสน้ำท่วม</li>
-											<li>โทรสอบถามการประปา ก่อนการใช้น้ำ</li>
-										</ul>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<!--[if (gte mso 9)|(IE)]>
-						</td>
-						</tr>
-						</table>
-						<![endif]-->
-					</td>
-				</tr>
-				<tr>
-					<td align="center">
-						<p><a href="#">อ่านต่อทั้งหมด</a></p>
-					</td>
-				</tr>
-				<tr>
-					<td class="inner contents" align="center">
-						<div>
-							<p>ต้องการความช่วยเหลือ? <a href="#">support@safetyalert.me</a></p>
-						</div>
-					</td>
-				</tr>
-			</table>
-			<!--[if (gte mso 9)|(IE)]>
-			</td>
-			</tr>
-			</table>
-			<![endif]-->
+			<div class="text-center logo">
+				<a href="http://www.safetyalert.me">
+					<img src="https://cloud.githubusercontent.com/assets/403010/23934120/89c30bd6-0975-11e7-9d4b-71f9375668c2.png" height="60" alt="" />
+				</a>
+			</div>
+
+			<%= yield %>
+
+			<div class="text-center footer-contact">
+				<p>ต้องการความช่วยเหลือ? <a href="mailto:support@safetyalert.me">support@safetyalert.me</a></p>
+			</div>
 		</div>
 	</center>
 </body>
