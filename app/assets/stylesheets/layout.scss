@@ -209,17 +209,27 @@
   }
 }
 
-a.navbar-brand {
+.navbar-header .navbar-brand {
+  padding: 5px 0 0 0;
+
+  a {
   font-family: 'Montserrat','Helvetica Neue',Arial,sans-serif;
   color: #FFF;
   line-height: 1.90em;
   float: left;
   font-size: 20px;
-  padding-top: 5px;
   margin-right: 1rem;
 
-  &:hover {
-    color: #000;
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+
+  .logo-brand {
+    max-width: 50px;
+    height: auto;
+    padding: 0 7px 7px 7px;
   }
 }
 
