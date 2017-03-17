@@ -2,6 +2,9 @@
 
 <div class="container">
   <h1>ข้อมูลเตือนภัย</h1>
+  <% if @location.present? %>
+    <h4>พื้นที่: <%= @location.district %>, <%= @location.province %></h4>
+  <% end %>
   <br />
   <div class="dropdown category-select pull-left">
     <button type="button" class="btn btn-default btn-right dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
