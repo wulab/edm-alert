@@ -16,14 +16,14 @@
         คุณทำการสมัครรับข่าวเตือนภัยเรียบร้อย
       </p>
       <p>
-        ระบบจะส่งข้อความเตือนทันที เมื่อพื้นที่ <%= @user.location.province %> เกิดภัยพิบัติ
+        ระบบจะส่งข้อความเตือนทันที เมื่อพื้นที่ <%= @user.location.district %>, <%= @user.location.province %> เกิดภัยพิบัติ
       </p>
       <br />
       <p>
         หากต้องการแก้ไขข้อมูลของคุณ <%= link_to "คลิกที่นี่", "http://www.safetyalert.me/users/edit" %>
       </p>
       <p>
-        ขอบคุณสำหรับการรับข่าวสารจาก <%= link_to "SafetyAlert", "www.safetyalert.me" %>
+        ตรวจสอบข้อมูลเตือนภัยในพื้นที่ <%= @user.location.district %> <%= link_to "คลิกที่นี่", "http://www.safetyalert.me/events/postalcode/#{@user.location.postal_code}" %>
       </p>
     </td>
 	</tr>
