@@ -28,6 +28,6 @@ Rails.application.routes.draw do
   get 'pages/map_with_category/:category', to: 'pages#map_with_category'
   get '/events/category/:category', to: 'events#category'
   get '/events/location/:location', to: 'events#location'
-  get '/events/postalcode/:postalcode', to: 'events#postalcode'
+  get '/events/postalcode/:postalcode', to: 'events#postalcode', as: :events_postalcode
   mount Sidekiq::Web => '/sidekiq'
 end

@@ -22,8 +22,12 @@
             <h1>SafetyAlert { <span class="thai-headline">ME</span> }</h1>
             <h4 class="header-detail">
               <p class="p lead">สวัสดีคุณ <%= current_user.full_name %></p>
-              <p class="p lead">คุณอยู่ในพื้นที่ <%= current_user.location.district %>, <%= current_user.location.province %>
-              <br/>รหัสไปรษณีย์ <%= current_user.location.postal_code %></p>
+              <p class="p lead">
+                คุณอยู่ในพื้นที่
+                <%= link_to "#{current_user.location.district}, #{current_user.location.province}", events_postalcode_path(current_user.location.postal_code)%>
+                <!-- <%= current_user.location.district %>, <%= current_user.location.province %> -->
+                <br/>รหัสไปรษณีย์ <%= current_user.location.postal_code %>
+            </p>
               <p class="p lead">เมื่อพื้นที่ของคุณอยู่ในจุดเสี่ยงภัย <br /> เราจะแจ้งข้อมูลเตือนภัยให้คุณทราบทันที</p>
             </h4>
 

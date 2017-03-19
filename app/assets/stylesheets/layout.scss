@@ -207,6 +207,16 @@
       background-color: #FFF;
     }
   }
+
+  ul.dropdown-menu {
+    margin-top: 8px;
+    background-color: #5f84e9;
+    border-top: transparent;
+    a:hover {
+      color: #FFF;
+    }
+  }
+
 }
 
 .navbar-header .navbar-brand {
@@ -281,6 +291,14 @@
       font-family: 'Kanit', sans-serif;
       padding: 1rem 0;
       line-height: 3rem;
+    }
+
+    a {
+      color: #FFF;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #000;
     }
   }
 }
