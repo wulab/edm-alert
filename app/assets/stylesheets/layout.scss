@@ -3,6 +3,15 @@
  * https://smacss.com/book/type-layout
  */
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 0 254px; /* bottom = footer height */
+}
+
 #main { padding-top: 60px; }
 
 .card {
@@ -155,7 +164,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom -.125rem center;
-  min-height: 100vh;
   .card {
     margin-top: 2rem;
   }
@@ -372,6 +380,12 @@
   background-color: rgb(224, 224, 227);
   padding: 40px 45px 45px;
   margin-top: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 254px;
+  width: 100%;
+  overflow:hidden;
 }
 
 #howitwork {
