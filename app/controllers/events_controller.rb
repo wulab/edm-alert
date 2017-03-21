@@ -6,8 +6,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
-    @hospitals_nearby = Hospital.where(postal_code: @event.location.postal_code.to_i)
+    if @event = Event.find_by(id: params[:id])
+      @hospitals_nearby = Hospital.where(postal_code: @event.location.postal_code.to_i)
+    end
   end
 
   def category
