@@ -296,9 +296,21 @@
     a {
       color: #FFF;
       text-decoration: underline;
+      &:hover {
+        color: #000;
+      }
     }
-    a:hover {
-      color: #000;
+
+    a.btn-primary-outline {
+      border-color: #FFF;
+      background-color: #FFF;
+      color: #5f84e9;
+      text-decoration: none;
+
+      &:hover {
+        background-color:#5f84e9;
+        color:#FFF;
+      }
     }
   }
 }
@@ -333,15 +345,6 @@
   }
 }
 
-.btn-primary-outline {
-  border-color: #FFF;
-  color: #5f84e9;
-
-  &:hover {
-    background-color:#5f84e9;
-    color:#FFF;
-  }
-}
 
 .btn-xl {
   padding: 15px 30px;
@@ -369,10 +372,6 @@
   background-color: rgb(224, 224, 227);
   padding: 40px 45px 45px;
   margin-top: 2rem;
-}
-
-#random-slogan {
-  opacity: 0.9;
 }
 
 #howitwork {
