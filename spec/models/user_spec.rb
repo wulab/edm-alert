@@ -11,7 +11,7 @@ describe User, type: :model do
   end
 
   context "#user" do
-    it "creates a new user" do
+    it "creates a new account" do
       user = build(:user)
       user.full_name = "full name"
       user.save

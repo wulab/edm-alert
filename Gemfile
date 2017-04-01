@@ -67,6 +67,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -88,6 +89,7 @@ group :test do
   gem "shoulda-matchers", require: false
   gem "timecop"
   gem "webmock"
+  gem 'email_spec'
 end
 
 group :production do
