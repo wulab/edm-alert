@@ -13,12 +13,16 @@ describe User, type: :model do
 
   context "#user" do
     it "creates a new account" do
-      user = build(:user)
-      user.full_name = "full name"
-      user.save
-
+      location = build(:location)
+      user = create(:user, full_name: "full name", location: location)
       expect(user.email).to be_present
       expect(user.full_name).to eq "full name"
+    end
+
+    it "has a postal code" do
+      location = build(:location)
+      user = build(:user, location: location)
+      expect(user.postal_code).to eq(location.postal_code)
     end
   end
 end
