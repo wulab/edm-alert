@@ -12,4 +12,10 @@ FactoryGirl.define do
     longitude   Faker::Address.longitude
     latitude    Faker::Address.latitude
   end
+
+  factory :event do
+    title       Faker::Name.name
+    description Faker::Name.name
+    source_url  Faker::Internet.url
+  end
 end
