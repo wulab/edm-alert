@@ -8,7 +8,7 @@ class User < ApplicationRecord
   belongs_to :location
 
   validates :uid, uniqueness: { scope: :provider }, allow_nil: true
-  validates_presence_of :email, :full_name
+  validates_presence_of :email, :full_name, :postal_code
 
   # Callbacks
   after_create :welcome_user

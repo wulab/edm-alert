@@ -157,6 +157,7 @@ body {
 
 .pages-about,
 .user-registrations-new,
+.user-registrations-create,
 .devise-sessions-new,
 .devise-passwords-new,
 .user-registrations-edit {
@@ -177,6 +178,12 @@ body {
   .links {
     padding: 1rem 0;
     text-align: center;
+  }
+  .form-control-feedback {
+    position: inherit;
+    width: auto;
+    text-align: left;
+    color: #777777;
   }
 }
 

@@ -11,9 +11,9 @@
           <div class="form-inputs">
             <%= f.input :full_name, required: true, label: 'ชื่อ-นามสกุล', autofocus: true %>
             <%= f.input :email, required: true, label: 'อีเมล์' %>
-            <%= f.input :password, required: true, label: 'พาสเวิร์ด', hint: ("ไม่ต่ำกว่า #{@minimum_password_length} ตัวอักษร" if @minimum_password_length) %>
+            <%= f.input :password, required: true, label: 'พาสเวิร์ด' %>
             <%= f.input :password_confirmation, required: true, label: 'ยืนยันพาสเวิร์ด' %>
-            <%= f.input :postal_code, required: true, label: 'รหัสไปรษณีย์' %>
+            <%= f.input :postal_code, required: true, label: 'รหัสไปรษณีย์', placeholder: "e.g. 10400" ,input_html: { type: "number" } %>
           </div>
 
           <div class="form-actions">
