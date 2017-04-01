@@ -90,6 +90,7 @@ group :test do
   gem "timecop"
   gem "webmock"
   gem 'email_spec'
+  gem "simplecov", require: false
 end
 
 group :production do
