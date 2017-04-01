@@ -22,11 +22,8 @@ describe UserMailer do
   end
 
   def user_email
-    user = build(:user)
     location = build(:location)
-    user.email = "email@example.com"
-    user.location = location
-    user.save
+    user = build(:user, email: "email@example.com", location: location)
     UserMailer.welcome_user(user)
   end
 end
