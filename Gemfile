@@ -91,6 +91,7 @@ group :test do
   gem "webmock"
   gem 'email_spec'
   gem "simplecov", require: false
+  gem "vcr"
 end
 
 group :production do
