@@ -17,5 +17,6 @@ FactoryGirl.define do
     title       Faker::Name.name
     description Faker::Name.name
     source_url  Faker::Internet.url
+    start_at    Time.now
   end
 end

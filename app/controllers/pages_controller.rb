@@ -1,9 +1,4 @@
 class PagesController < ApplicationController
-  def index
-    @events = Event.all.this_weeks.most_recent(50)
-    @hash = build_markers(@events)
-  end
-
   def map
     @events = Event.all.this_weeks.most_recent(50)
     @event_provinces = Location.joins(:events).pluck(:province).uniq
