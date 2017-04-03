@@ -49,7 +49,7 @@ class Api::V1::EventsController < ApplicationController
   end
 
   private
-  
+
   def set_headers
     headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Allow-Methods'] = 'GET'

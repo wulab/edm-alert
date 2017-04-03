@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe EventsController do
-  describe "GET #show" do
+  describe "GET #index" do
     it "shows latest events" do
       location = build(:location)
       event = build(:event, location: location)
