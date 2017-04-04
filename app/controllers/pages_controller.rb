@@ -1,26 +1,22 @@
 class PagesController < ApplicationController
   def map
-    @events = Event.all.this_weeks.most_recent(50)
-    @event_provinces = Location.joins(:events).pluck(:province).uniq
+    @events = Event.most_recent(50)
+    @event_provinces = Event.available_locations
     @event_categories = Event.categories.keys
     @hash = build_markers(@events)
   end
 
   def map_with_location
-    @events = Event.joins(:location).
-                where(locations: { province: params[:location] }).
-                order(start_at: :desc).this_weeks.most_recent(20)
-    @event_provinces = Location.joins(:events).
-                        pluck(:province).uniq - [params[:location]]
+    @events = Event.by_location(params[:location]).most_recent(20)
+    @event_provinces = Event.available_locations - [params[:location]]
     @event_categories = Event.categories.keys
     @hash = build_markers(@events)
     render :map
   end
 
   def map_with_category
-    @events = Event.where(category: params[:category]).
-                order(start_at: :desc).this_weeks.most_recent(20)
-    @event_provinces = Location.joins(:events).pluck(:province).uniq
+    @events = Event.by_category(params[:category]).most_recent(20)
+    @event_provinces = Event.available_locations
     @event_categories = Event.categories.keys - [params[:category]]
     @hash = build_markers(@events)
     render :map

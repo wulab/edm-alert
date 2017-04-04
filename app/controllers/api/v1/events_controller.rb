@@ -2,9 +2,7 @@ class Api::V1::EventsController < ApplicationController
   before_action :set_headers
 
   def index
-    @events = Event.order(start_at: :desc).
-                this_weeks.
-                page(params[:page])
+    @events = Event.this_weeks.page(params[:page])
     render :index, status: :ok
   end
 
@@ -23,26 +21,17 @@ class Api::V1::EventsController < ApplicationController
       else params[:category]
       end
 
-    @events = Event.where(category: category).
-                order(start_at: :desc).
-                this_weeks.
-                page(params[:page])
+    @events = Event.by_category(category).this_weeks.page(params[:page])
     render :index, status: :ok
   end
 
   def location
-    @events = Event.joins(:location).
-                where(locations: { province: params[:location] }).
-                order(start_at: :desc).
-                this_weeks.
-                page(params[:page])
+    @events = Event.by_location(params[:location]).this_weeks.page(params[:page])
     render :index, status: :ok
   end
 
   def postalcode
-    @events = Event.joins(:location).
-                where(locations: { postal_code: params[:postalcode] }).
-                order(start_at: :desc).
+    @events = Event.by_postalcode(params[:postalcode]).
                 this_weeks.
                 page(params[:page])
     render :index, status: :ok

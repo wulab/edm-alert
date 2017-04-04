@@ -27,7 +27,7 @@
       <%= render "layouts/alert" %>
       <%= yield %>
 
-      <% unless current_page?(pages_map_path) %>
+      <% unless map_pages? %>
         <%= render 'layouts/footer' %>
       <% end %>
     </div>

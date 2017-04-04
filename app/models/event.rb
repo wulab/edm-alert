@@ -4,13 +4,24 @@ class Event < ApplicationRecord
   has_many :users, through: :location
   after_create :notify_users
   paginates_per 20
-  scope :this_weeks, -> { where('start_at >= ?', 1.week.ago) }
-  scope :most_recent, -> (limit) { order('start_at desc').limit(limit) }
+
+  default_scope               -> { order(:start_at) }
+  scope :this_weeks,          -> { where('start_at >= ?', 1.week.ago) }
+  scope :most_recent,         -> (limit) { limit(limit) }
+  scope :available_locations, -> { joins(:location).pluck(:province).uniq }
+  scope :by_category,         -> (category) { where(category: category) }
+  scope :by_location,         -> (location) do
+    joins(:location).where(locations: { province: location })
+  end
+  scope :by_postalcode,       -> (postal_code) do
+    joins(:location).where(locations: { postal_code: postal_code })
+  end
 
   private
-    def notify_users
-      users.each do |user|
-        NotificationMailer.event_warning(user, self).deliver_later
-      end
+
+  def notify_users
+    users.each do |user|
+      NotificationMailer.event_warning(user, self).deliver_later
     end
+  end
 end

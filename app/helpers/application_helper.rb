@@ -5,4 +5,9 @@ module ApplicationHelper
     html_options["rel"] ||= "nofollow"
     link_to(name, options, html_options, &block)
   end
+
+  def map_pages?
+    params[:controller] == 'pages' && 
+      %w(map map_with_location map_with_category).include?(params[:action])
+  end
 end
