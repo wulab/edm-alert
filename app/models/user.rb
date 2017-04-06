@@ -8,7 +8,8 @@ class User < ApplicationRecord
   belongs_to :location
 
   validates :uid, uniqueness: { scope: :provider }, allow_nil: true
-  validates_presence_of :email, :full_name, :postal_code
+  validates_presence_of :email, :full_name
+  validate :ensure_location_exists
 
   # Callbacks
   after_create :welcome_user
@@ -50,5 +51,9 @@ class User < ApplicationRecord
 
   def welcome_user
     UserMailer.welcome_user(self).deliver_now
+  end
+
+  def ensure_location_exists
+    errors.add('postal_code', 'รหัสไปรษณีย์ไม่ถูกต้อง') unless self.postal_code
   end
 end

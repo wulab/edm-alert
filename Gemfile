@@ -98,6 +98,7 @@ group :test do
   gem 'email_spec'
   gem "simplecov", require: false
   gem "vcr"
+  gem 'selenium-webdriver'
 end
 
 group :production do
