@@ -33,8 +33,28 @@
     </div>
   </body>
 
-  <script type="text/javascript">
-    if ($("#map_canvas")[0]){
+  <% if current_page?(root_path) %>
+    <a id="tars-widget-fab" class="fab bounce closed"
+      href="https://safetyalert.hellotars.com/conv/rJtMak" target="_blank"
+      style="position:fixed;background-color:#B7E5FF;z-index:2147483647;width:62px;height:62px;cursor:pointer;border-radius:6px;box-shadow:0 2px 6px 0 rgba(0,0,0,.4);overflow:hidden;padding:0;border:0;bottom:4%;right:30px">
+      <img class="convbot"
+      src="https://cloud.githubusercontent.com/assets/403010/24797484/a86f95ba-1bbb-11e7-8b06-ecaa55a25186.png"
+      convbot-color="#FFFFFF"
+      style="width:100%">
+    </a>
+    <script>
+      (function(){var js,fs,d=document,id="tars-widget-script",
+        b="https://tars-file-upload.s3.amazonaws.com/share/";
+        if(!d.getElementById(id)){js=d.createElement("script");
+        js.id=id;js.type="text/javascript";
+        js.src=b+"js/widget.js";
+        fs=d.getElementsByTagName("script")[0];
+        fs.parentNode.insertBefore(js,fs)}})();
+    </script>
+  <% end %>
+
+  <% if map_pages? %>
+    <script type="text/javascript">
       handler = Gmaps.build('Google', { markers: { clusterer: undefined  }});
       handler.buildMap({
           provider: {
@@ -66,6 +86,6 @@
           }
         }
       );
-    }
-  </script>
+    </script>
+  <% end %>
 </html>
