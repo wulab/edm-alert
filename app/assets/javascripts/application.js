@@ -17,4 +17,5 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
+//= require registration
 //= require_tree .
