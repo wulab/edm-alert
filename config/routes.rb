@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: { format: :json } do
       resources :events, only: [:index, :show]
+      resources :locations, only: [:show]
     end
   end
   get "/api/v1/events/category/:category",
