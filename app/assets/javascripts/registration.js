@@ -5,19 +5,20 @@ $(document).ready(function() {
 function checkValidLocation() {
   var element = $(this);
   var container = element.parent(".form-group");
+  var formFeedback = $(".form-control-feedback");
   var url = "http://www.safetyalert.me/api/v1/locations/" + element.val();
   var req = $.ajax({
     url : url,
       dataType : "json",
       success : function(response) {
         if(response.data.message == "Not Found") {
-          $(".help-block").remove();
-          container.addClass("has-error").removeClass("has-success");
-          container.append('<div class="help-block">รหัสไปรษณีย์ไม่ถูกต้อง</div>');
+          formFeedback.remove();
+          container.removeClass("has-success").addClass("has-error");
+          container.append('<div class="form-control-feedback">รหัสไปรษณีย์ไม่ถูกต้อง</div>');
         } else {
-          $(".help-block").remove();
+          formFeedback.remove();
           container.removeClass("has-error").addClass("has-success");
-          container.append('<div class="help-block">คุณอยู่ในพื้นที่ ' +
+          container.append('<div class="form-control-feedback">คุณอยู่ในพื้นที่ ' +
             response.data.location.district +
             ', ' +
             response.data.location.province +
