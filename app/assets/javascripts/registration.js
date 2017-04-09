@@ -1,5 +1,6 @@
-$(document).ready(function() {
-  $("#user_postal_code").keyup(_.debounce(checkValidLocation, 1000));
+$(document).on('turbolinks:load', function() {
+  $("form.new_user #user_postal_code").
+    keyup(_.debounce(checkValidLocation, 1000));
 });
 
 function checkValidLocation() {
