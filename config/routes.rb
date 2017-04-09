@@ -33,4 +33,6 @@ Rails.application.routes.draw do
   get '/events/location/:location', to: 'events#location'
   get '/events/postalcode/:postalcode', to: 'events#postalcode', as: :events_postalcode
   mount Sidekiq::Web => '/sidekiq'
+
+  get '*unmatched_route', to: 'application#route_not_found'
 end
