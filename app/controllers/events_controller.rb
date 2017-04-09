@@ -1,8 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = Event.this_weeks.page(params[:page])
-    @event_categories = Event.categories.keys
-    @event_provinces = Event.available_locations
+    set_locations
   end
 
   def show
@@ -13,23 +12,27 @@ class EventsController < ApplicationController
 
   def category
     @events = Event.by_category(params[:category]).this_weeks.page(params[:page])
-    @event_categories = Event.categories.keys - [params[:category]]
-    @event_provinces = Event.available_locations
+    set_locations
     render :index
   end
 
   def location
     @events = Event.by_location(params[:location]).this_weeks.page(params[:page])
-    @event_provinces = Event.available_locations
-    @event_categories = Event.categories.keys
+    set_locations
     render :index
   end
 
   def postalcode
     @events = Event.by_postalcode(params[:postalcode]).this_weeks.page(params[:page])
-    @event_provinces = Event.available_locations
-    @event_categories = Event.categories.keys
     @location = Location.find_by(postal_code: params[:postalcode])
+    set_locations
     render :index
+  end
+
+  private
+  
+  def set_locations
+    @event_categories = Event.categories.keys
+    @event_provinces = Event.available_locations
   end
 end
