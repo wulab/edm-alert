@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   after_create :notify_users
   paginates_per 20
 
-  default_scope               -> { order(:start_at) }
+  default_scope               -> { order('start_at DESC') }
   scope :this_weeks,          -> { where('start_at >= ?', 1.week.ago) }
   scope :most_recent,         -> (limit) { limit(limit) }
   scope :available_locations, -> { joins(:location).pluck(:province).uniq }
