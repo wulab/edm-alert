@@ -1,67 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>หน้านี้ไม่มีข้อมูล (404) | SafetyAlert</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    *{
+    	text-align: center;
+    	margin: 0 auto 0 auto;
+    }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    /* The shadow floats */
+    @keyframes shadowFloat{
+      0%   {transform:scale(1,1);}
+      25%  {transform:scale(.9,.9);}
+      50%  {transform:scale(.9,.9);}
+      100% {transform:scale(1,1);}
+    }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    /* The person floats */
+    @keyframes personFloat{
+      0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        visibility: visible;
+      }
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+      25% {
+        -webkit-transform: translate(0, -20%);
+        transform: translate(0, -20%);
+      }
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+      50% {
+        -webkit-transform: translate(0, -20%);
+        transform: translate(0, -20%);
+      }
+
+      100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        visibility: visible;
+      }
+    }
+
+    body {
+    	background: #F5F5F5;
+    }
+
+    #container{
+    	width: 960;
+    }
+
+    #image{
+      margin-top: 100px;
+      width:350px;
+    }
+
+    #person{
+      float: center;
+    }
+
+    .float{
+      display: block;
+      clear: both;
+      animation-name: personFloat;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    .oval{
+      animation-name: shadowFloat;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    h3.bold{
+    	font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 18px;
+      clear: both;
+      color: #000000;
+      margin-top: 50px;
+    }
+
+    .underline {
+      width: 80px;
+      height: 2px;
+      background: #4A90E2;
+      margin: 14px auto;
+    }
+
+    p.body{
+    	display: block;
+      font-family: 'Varela Round', 'Helvetica Neue', Arial, sans-serif;
+      text-align: center;
+      font-weight: 400;
+      font-size: 18px;
+      clear: both;
+      color: rgba(0,0,0,0.75);
+    }
+
+    .btn {
+      border: 1px solid #4A90E2;
+      border-radius: 3px;
+      background: #ffffff;
+      color: #4A90E2;
+      font-family: 'Varela Round', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      display: block;
+      padding: 15px 50px 15px 50px;
+      margin: 20px 0;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      outline: none;
+    }
+    
+    .btn:hover {
+      background-color: #5f84e9;
+      color: #FFF;
+    }
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+		<div id ="container">
+			<div id ="image">
+				<div id="person">
+					<img src = "https://cloud.githubusercontent.com/assets/403010/24845519/e6bcc004-1ddc-11e7-972d-3514cfca0537.png" alt="left" class="float">
+					<img src = "https://cloud.githubusercontent.com/assets/403010/24845541/2278b0f8-1ddd-11e7-816c-a059ce375754.png" alt="left" class="oval">
+				</div>
+			</div>
+			<h3 class = "bold">PAGE NOT FOUND</h3>
+			<div class="underline"></div>
+			<p class = "body">หน้านี้ไม่มีข้อมูล</p>
+      <a href="http://www.safetyalert.me" class="btn">กลับไป SafetyAlert</a>
+		</div>
+	</body>
+
 </html>
