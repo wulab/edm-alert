@@ -29,8 +29,16 @@ class EventsController < ApplicationController
     render :index
   end
 
+  def district
+    @location = Location.find_by(district: params[:district])
+    @location = Location.new.similar_district(params[:district]) if @location.nil?
+    @events = Event.by_district(@location.district).this_weeks.page(params[:page])
+    set_locations
+    render :index
+  end
+
   private
-  
+
   def set_locations
     @event_categories = Event.categories.keys
     @event_provinces = Event.available_locations

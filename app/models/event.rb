@@ -16,6 +16,9 @@ class Event < ApplicationRecord
   scope :by_postalcode,       -> (postal_code) do
     joins(:location).where(locations: { postal_code: postal_code })
   end
+  scope :by_district,         -> (district) do
+    joins(:location).where(locations: { district: district })
+  end
 
   private
 
