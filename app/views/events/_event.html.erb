@@ -4,6 +4,9 @@
   <td><%= event.latitude %></td>
   <td><%= event.longitude %></td>
   <td><%= external_link_to event.source_name, truncate_url(event.source_url) %></td>
-  <td><%= "#{event.location.district}, #{event.location.province}" %></td>
+  <td>
+    <%= link_to "#{event.location.district}, #{event.location.province}",
+      events_postalcode_path(event.location.postal_code) %>
+  </td>
   <td><%= event.start_at.strftime("%-d/%-m/%y: %H:%M") %></td>
 </tr>
