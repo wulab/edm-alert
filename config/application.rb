@@ -15,6 +15,8 @@ module SafetyAlert
     # Be sure to have the adapter's gem in your Gemfile
     # and follow the adapter's specific installation
     # and deployment instructions.
+    config.eager_load_paths.push(*%W(#{config.root}/lib))
+
     config.active_job.queue_adapter = :sidekiq
   end
 end
