@@ -5,7 +5,7 @@ class Api::V1::LocationsController < ApplicationController
     if @location = Location.find_by(postal_code: params[:id])
       render :show, status: :ok
     else
-      render json: { data: { message: "Not Found" } }
+      render json: { data: { message: "Not Found" } }, status: :not_found
     end
   end
 
