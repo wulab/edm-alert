@@ -50,4 +50,14 @@ describe EventsController do
       expect(response).to be_success
     end
   end
+
+  describe "GET #district" do
+    it "shows event in district area" do
+      location = create(:location)
+      event = build(:event, location: location)
+      get :district, params: { district: "พญาไท" }
+
+      expect(response).to be_success
+    end
+  end
 end

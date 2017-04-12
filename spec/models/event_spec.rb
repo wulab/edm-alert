@@ -8,9 +8,21 @@ describe Event, type: :model do
 
   context "#event" do
     it "creates a new event" do
-      location = build(:location)
-      event = create(:event, location: location)
+      event = create(:event)
       expect(event.title).to be_present
+    end
+
+    it 'returns a default scope by start_at descending' do
+      expect(Event.all.to_sql).to eq Event.all.order('start_at DESC').to_sql
+    end
+
+    it 'notify users by email within their area' do
+      ActiveJob::Base.queue_adapter = :test
+      location = create(:location)
+      create(:user, location: location)
+      event = build(:event, location: location)
+
+      expect { event.save }.to have_enqueued_job.on_queue('mailers')
     end
   end
 end
