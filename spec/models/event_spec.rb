@@ -24,5 +24,14 @@ describe Event, type: :model do
 
       expect { event.save }.to have_enqueued_job.on_queue('mailers')
     end
+
+    it 'does not notify users by email when the users unsubscribe' do
+      ActiveJob::Base.queue_adapter = :test
+      location = create(:location)
+      create(:user, location: location, unsubscribed_from_emails: true)
+      event = build(:event, location: location)
+
+      expect { event.save }.not_to have_enqueued_job.on_queue('mailers')
+    end
   end
 end

@@ -23,7 +23,7 @@ class Event < ApplicationRecord
   private
 
   def notify_users
-    users.each do |user|
+    users.reject(&:unsubscribed_from_emails).each do |user|
       NotificationMailer.event_warning(user, self).deliver_later
     end
   end

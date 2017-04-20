@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
 
   protected
     def configure_permitted_parameters
-      extra_attributes = [:full_name, :postal_code]
+      extra_attributes = [:full_name, :postal_code, :unsubscribed_from_emails]
       devise_parameter_sanitizer.permit(:sign_up, keys: extra_attributes)
       devise_parameter_sanitizer.permit(:account_update, keys: extra_attributes)
     end

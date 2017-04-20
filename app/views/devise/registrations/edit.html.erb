@@ -22,6 +22,7 @@
             <%= f.input :password, autocomplete: "off", label: 'พาสเวิร์ด', hint: "เว้นว่างไว้หากไม่ต้องการเปลี่ยน", required: false %>
             <%= f.input :password_confirmation, label: 'ยืนยันพาสเวิร์ด', required: false %>
             <%= f.input :current_password, label: 'พาสเวิร์ดปัจจุบัน', hint: "ใส่พาสเวิร์ดเพื่อแก้ไขโปรไฟล์", required: true %>
+            <%= f.input :unsubscribed_from_emails, label: 'ยกเลิก รับข่าวเตือนภัย' %>
           </div>
 
           <div class="form-actions">
