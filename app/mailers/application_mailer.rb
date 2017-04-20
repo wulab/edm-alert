@@ -3,4 +3,5 @@ class ApplicationMailer < ActionMailer::Base
   layout 'mailer'
 
   add_template_helper HtmlHelper
+  add_template_helper UnsubscribesHelper
 end
